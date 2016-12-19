@@ -1,0 +1,117 @@
+-- @path MM=/SmallUML/model/smalluml.ecore
+-- @path MM1=/UML/model/uml.ecore
+
+module Small2UML;
+create OUT : MM1 from IN : MM;
+
+
+
+
+rule boolean {
+	from
+		f:MM!"smalluml::Boolean"
+	to
+		t:MM1!DataType (
+			name <- 'boolean',
+			ownedAttribute <- f.value
+			)
+}
+
+rule int {
+	from
+		f:MM!"smalluml::Int"
+	to
+		t:MM1!DataType (
+			name <- 'int',
+			ownedAttribute <- f.value
+			)
+}
+
+rule float {
+	from
+		f:MM!"smalluml::Float"
+	to
+		t:MM1!DataType (
+			name <- 'float',
+			ownedAttribute <- f.value
+			)
+}
+
+rule string {
+	from
+		f:MM!"smalluml::String"
+	to
+		t:MM1!DataType (
+			name <- 'string',
+			ownedAttribute <- f.value
+			)
+}
+
+
+rule namedElement{
+	from
+		f:MM!NamedElement
+	to
+		t:MM1!NamedElement (
+			name <- f.name
+		)
+}
+
+
+rule type{
+	from
+		f:MM!Type
+	to
+		t:MM1!Type (	
+		)
+}
+
+rule class{
+	from
+		f:MM!Class
+	to
+		t:MM1!Class (	
+			ownedOperation <- f.method,
+			ownedAttribute <- f.attribute
+		)
+}
+
+rule method{
+	from
+		f:MM!Method
+	to
+		t:MM1!Operation (	
+			ownedParameters <- f.parameters,
+			type <- f.return
+		)
+}
+
+rule role{
+	from
+		f:MM!Role
+	to
+		t:MM1!Property (
+			class <- f.class,
+			upper <- f.upper,
+			lower <- f.lower
+		)
+}
+
+rule association{
+	from
+		f:MM!Association
+	to
+		t:MM1!Association (
+			memberEnd <- Set{f.user, f.used}
+		)
+}
+
+rule heritage{
+	from
+		f:MM!Heritage
+	to
+		t:MM1!Generalization (
+			source <- f.child,
+			target <- f.mother
+		)
+}
