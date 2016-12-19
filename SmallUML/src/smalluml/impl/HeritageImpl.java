@@ -4,6 +4,7 @@ package smalluml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -26,9 +27,9 @@ import smalluml.SmallumlPackage;
  *
  * @generated
  */
-public class HeritageImpl extends ClassImpl implements Heritage {
+public class HeritageImpl extends NamedElementImpl implements Heritage {
 	/**
-	 * The cached value of the '{@link #getMother() <em>Mother</em>}' reference.
+	 * The cached value of the '{@link #getMother() <em>Mother</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMother()
@@ -38,7 +39,7 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	protected Role mother;
 
 	/**
-	 * The cached value of the '{@link #getChild() <em>Child</em>}' reference.
+	 * The cached value of the '{@link #getChild() <em>Child</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChild()
@@ -72,14 +73,6 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	 * @generated
 	 */
 	public Role getMother() {
-		if (mother != null && mother.eIsProxy()) {
-			InternalEObject oldMother = (InternalEObject)mother;
-			mother = (Role)eResolveProxy(oldMother);
-			if (mother != oldMother) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.HERITAGE__MOTHER, oldMother, mother));
-			}
-		}
 		return mother;
 	}
 
@@ -88,8 +81,14 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role basicGetMother() {
-		return mother;
+	public NotificationChain basicSetMother(Role newMother, NotificationChain msgs) {
+		Role oldMother = mother;
+		mother = newMother;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.HERITAGE__MOTHER, oldMother, newMother);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -98,10 +97,17 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	 * @generated
 	 */
 	public void setMother(Role newMother) {
-		Role oldMother = mother;
-		mother = newMother;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.HERITAGE__MOTHER, oldMother, mother));
+		if (newMother != mother) {
+			NotificationChain msgs = null;
+			if (mother != null)
+				msgs = ((InternalEObject)mother).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.HERITAGE__MOTHER, null, msgs);
+			if (newMother != null)
+				msgs = ((InternalEObject)newMother).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.HERITAGE__MOTHER, null, msgs);
+			msgs = basicSetMother(newMother, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.HERITAGE__MOTHER, newMother, newMother));
 	}
 
 	/**
@@ -110,14 +116,6 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	 * @generated
 	 */
 	public Role getChild() {
-		if (child != null && child.eIsProxy()) {
-			InternalEObject oldChild = (InternalEObject)child;
-			child = (Role)eResolveProxy(oldChild);
-			if (child != oldChild) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.HERITAGE__CHILD, oldChild, child));
-			}
-		}
 		return child;
 	}
 
@@ -126,8 +124,14 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role basicGetChild() {
-		return child;
+	public NotificationChain basicSetChild(Role newChild, NotificationChain msgs) {
+		Role oldChild = child;
+		child = newChild;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.HERITAGE__CHILD, oldChild, newChild);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -136,10 +140,33 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	 * @generated
 	 */
 	public void setChild(Role newChild) {
-		Role oldChild = child;
-		child = newChild;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.HERITAGE__CHILD, oldChild, child));
+		if (newChild != child) {
+			NotificationChain msgs = null;
+			if (child != null)
+				msgs = ((InternalEObject)child).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.HERITAGE__CHILD, null, msgs);
+			if (newChild != null)
+				msgs = ((InternalEObject)newChild).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.HERITAGE__CHILD, null, msgs);
+			msgs = basicSetChild(newChild, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.HERITAGE__CHILD, newChild, newChild));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SmallumlPackage.HERITAGE__MOTHER:
+				return basicSetMother(null, msgs);
+			case SmallumlPackage.HERITAGE__CHILD:
+				return basicSetChild(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -151,11 +178,9 @@ public class HeritageImpl extends ClassImpl implements Heritage {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmallumlPackage.HERITAGE__MOTHER:
-				if (resolve) return getMother();
-				return basicGetMother();
+				return getMother();
 			case SmallumlPackage.HERITAGE__CHILD:
-				if (resolve) return getChild();
-				return basicGetChild();
+				return getChild();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

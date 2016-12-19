@@ -19,54 +19,54 @@ package smalluml;
  * @model
  * @generated
  */
-public interface Association extends smalluml.Class {
+public interface Association extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Used</b></em>' reference.
+	 * Returns the value of the '<em><b>Used</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Used</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Used</em>' reference.
+	 * @return the value of the '<em>Used</em>' containment reference.
 	 * @see #setUsed(Role)
 	 * @see smalluml.SmallumlPackage#getAssociation_Used()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Role getUsed();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Association#getUsed <em>Used</em>}' reference.
+	 * Sets the value of the '{@link smalluml.Association#getUsed <em>Used</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Used</em>' reference.
+	 * @param value the new value of the '<em>Used</em>' containment reference.
 	 * @see #getUsed()
 	 * @generated
 	 */
 	void setUsed(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>User</b></em>' reference.
+	 * Returns the value of the '<em><b>User</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User</em>' reference.
+	 * @return the value of the '<em>User</em>' containment reference.
 	 * @see #setUser(Role)
 	 * @see smalluml.SmallumlPackage#getAssociation_User()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Role getUser();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Association#getUser <em>User</em>}' reference.
+	 * Sets the value of the '{@link smalluml.Association#getUser <em>User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User</em>' reference.
+	 * @param value the new value of the '<em>User</em>' containment reference.
 	 * @see #getUser()
 	 * @generated
 	 */

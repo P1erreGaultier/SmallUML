@@ -3,9 +3,12 @@
 package smalluml.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import smalluml.Method;
 import smalluml.SmallumlPackage;
 import smalluml.Type;
@@ -26,7 +29,7 @@ import smalluml.Type;
  */
 public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	/**
-	 * The cached value of the '{@link #getMethod() <em>Method</em>}' reference list.
+	 * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMethod()
@@ -36,7 +39,7 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	protected EList<Method> method;
 
 	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAttribute()
@@ -71,7 +74,7 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	 */
 	public EList<Method> getMethod() {
 		if (method == null) {
-			method = new EObjectResolvingEList<Method>(Method.class, this, SmallumlPackage.CLASS__METHOD);
+			method = new EObjectContainmentEList<Method>(Method.class, this, SmallumlPackage.CLASS__METHOD);
 		}
 		return method;
 	}
@@ -83,9 +86,25 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	 */
 	public EList<Type> getAttribute() {
 		if (attribute == null) {
-			attribute = new EObjectResolvingEList<Type>(Type.class, this, SmallumlPackage.CLASS__ATTRIBUTE);
+			attribute = new EObjectContainmentEList<Type>(Type.class, this, SmallumlPackage.CLASS__ATTRIBUTE);
 		}
 		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SmallumlPackage.CLASS__METHOD:
+				return ((InternalEList<?>)getMethod()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.CLASS__ATTRIBUTE:
+				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Class extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Method</b></em>' reference list.
+	 * Returns the value of the '<em><b>Method</b></em>' containment reference list.
 	 * The list contents are of type {@link smalluml.Method}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -31,15 +31,15 @@ public interface Class extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Method</em>' reference list.
+	 * @return the value of the '<em>Method</em>' containment reference list.
 	 * @see smalluml.SmallumlPackage#getClass_Method()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Method> getMethod();
 
 	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' reference list.
+	 * Returns the value of the '<em><b>Attribute</b></em>' containment reference list.
 	 * The list contents are of type {@link smalluml.Type}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -47,9 +47,9 @@ public interface Class extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' reference list.
+	 * @return the value of the '<em>Attribute</em>' containment reference list.
 	 * @see smalluml.SmallumlPackage#getClass_Attribute()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Type> getAttribute();

@@ -6,6 +6,7 @@ import java.lang.String;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -28,9 +29,9 @@ import smalluml.SmallumlPackage;
  *
  * @generated
  */
-public class RoleImpl extends ClassImpl implements Role {
+public class RoleImpl extends NamedElementImpl implements Role {
 	/**
-	 * The cached value of the '{@link #getClass_() <em>Class</em>}' reference.
+	 * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getClass_()
@@ -104,14 +105,6 @@ public class RoleImpl extends ClassImpl implements Role {
 	 * @generated
 	 */
 	public smalluml.Class getClass_() {
-		if (class_ != null && class_.eIsProxy()) {
-			InternalEObject oldClass = (InternalEObject)class_;
-			class_ = (smalluml.Class)eResolveProxy(oldClass);
-			if (class_ != oldClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.ROLE__CLASS, oldClass, class_));
-			}
-		}
 		return class_;
 	}
 
@@ -120,8 +113,14 @@ public class RoleImpl extends ClassImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public smalluml.Class basicGetClass() {
-		return class_;
+	public NotificationChain basicSetClass(smalluml.Class newClass, NotificationChain msgs) {
+		smalluml.Class oldClass = class_;
+		class_ = newClass;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.ROLE__CLASS, oldClass, newClass);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -130,10 +129,17 @@ public class RoleImpl extends ClassImpl implements Role {
 	 * @generated
 	 */
 	public void setClass(smalluml.Class newClass) {
-		smalluml.Class oldClass = class_;
-		class_ = newClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ROLE__CLASS, oldClass, class_));
+		if (newClass != class_) {
+			NotificationChain msgs = null;
+			if (class_ != null)
+				msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ROLE__CLASS, null, msgs);
+			if (newClass != null)
+				msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ROLE__CLASS, null, msgs);
+			msgs = basicSetClass(newClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ROLE__CLASS, newClass, newClass));
 	}
 
 	/**
@@ -184,11 +190,24 @@ public class RoleImpl extends ClassImpl implements Role {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SmallumlPackage.ROLE__CLASS:
+				return basicSetClass(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmallumlPackage.ROLE__CLASS:
-				if (resolve) return getClass_();
-				return basicGetClass();
+				return getClass_();
 			case SmallumlPackage.ROLE__UPPER:
 				return getUpper();
 			case SmallumlPackage.ROLE__LOWER:

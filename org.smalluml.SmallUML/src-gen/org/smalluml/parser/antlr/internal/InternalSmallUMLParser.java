@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Diagram'", "'{'", "'assoc'", "'('", "','", "')'", "'heritage'", "'class'", "'}'", "'Association'", "'method'", "'attribute'", "'used'", "'user'", "'Heritage'", "'mother'", "'child'", "'Class'", "'Type'", "'Role'", "'upper'", "'lower'", "'Float'", "'value'", "'Int'", "'Boolean'", "'String'", "'-'", "'.'", "'E'", "'e'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Diagram'", "'{'", "'assoc'", "','", "'}'", "'heritage'", "'class'", "'Association'", "'used'", "'user'", "'Heritage'", "'mother'", "'child'", "'Class'", "'method'", "'attribute'", "'Role'", "'upper'", "'lower'", "'-'", "'Method'", "'parameters'", "'return'", "'Type'", "'Float'", "'Int'", "'Boolean'", "'String'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -31,7 +31,6 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     public static final int T__16=16;
     public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
     public static final int T__33=33;
@@ -58,8 +57,6 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -139,7 +136,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDiagram"
-    // InternalSmallUML.g:71:1: ruleDiagram returns [EObject current=null] : ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? (otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')' )? otherlv_21= '}' ) ;
+    // InternalSmallUML.g:71:1: ruleDiagram returns [EObject current=null] : ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}' )? (otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}' )? (otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}' )? otherlv_21= '}' ) ;
     public final EObject ruleDiagram() throws RecognitionException {
         EObject current = null;
 
@@ -158,16 +155,28 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         Token otherlv_18=null;
         Token otherlv_20=null;
         Token otherlv_21=null;
+        EObject lv_assoc_5_0 = null;
+
+        EObject lv_assoc_7_0 = null;
+
+        EObject lv_heritage_11_0 = null;
+
+        EObject lv_heritage_13_0 = null;
+
+        EObject lv_class_17_0 = null;
+
+        EObject lv_class_19_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSmallUML.g:77:2: ( ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? (otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')' )? otherlv_21= '}' ) )
-            // InternalSmallUML.g:78:2: ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? (otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')' )? otherlv_21= '}' )
+            // InternalSmallUML.g:77:2: ( ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}' )? (otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}' )? (otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}' )? otherlv_21= '}' ) )
+            // InternalSmallUML.g:78:2: ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}' )? (otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}' )? (otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}' )? otherlv_21= '}' )
             {
-            // InternalSmallUML.g:78:2: ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? (otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')' )? otherlv_21= '}' )
-            // InternalSmallUML.g:79:3: () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? (otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')' )? otherlv_21= '}'
+            // InternalSmallUML.g:78:2: ( () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}' )? (otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}' )? (otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}' )? otherlv_21= '}' )
+            // InternalSmallUML.g:79:3: () otherlv_1= 'Diagram' otherlv_2= '{' (otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}' )? (otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}' )? (otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}' )? otherlv_21= '}'
             {
             // InternalSmallUML.g:79:3: ()
             // InternalSmallUML.g:80:4: 
@@ -188,7 +197,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSmallUML.g:94:3: (otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
+            // InternalSmallUML.g:94:3: (otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -197,36 +206,39 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalSmallUML.g:95:4: otherlv_3= 'assoc' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
+                    // InternalSmallUML.g:95:4: otherlv_3= 'assoc' otherlv_4= '{' ( (lv_assoc_5_0= ruleAssociation ) ) (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )* otherlv_8= '}'
                     {
-                    otherlv_3=(Token)match(input,13,FOLLOW_5); 
+                    otherlv_3=(Token)match(input,13,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getDiagramAccess().getAssocKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,14,FOLLOW_6); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_5); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getDiagramAccess().getLeftParenthesisKeyword_3_1());
+                    				newLeafNode(otherlv_4, grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalSmallUML.g:103:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:104:5: ( ruleEString )
+                    // InternalSmallUML.g:103:4: ( (lv_assoc_5_0= ruleAssociation ) )
+                    // InternalSmallUML.g:104:5: (lv_assoc_5_0= ruleAssociation )
                     {
-                    // InternalSmallUML.g:104:5: ( ruleEString )
-                    // InternalSmallUML.g:105:6: ruleEString
+                    // InternalSmallUML.g:104:5: (lv_assoc_5_0= ruleAssociation )
+                    // InternalSmallUML.g:105:6: lv_assoc_5_0= ruleAssociation
                     {
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDiagramRule());
-                    						}
+                    						newCompositeNode(grammarAccess.getDiagramAccess().getAssocAssociationParserRuleCall_3_2_0());
                     					
-
-                    						newCompositeNode(grammarAccess.getDiagramAccess().getAssocAssociationCrossReference_3_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
+                    pushFollow(FOLLOW_6);
+                    lv_assoc_5_0=ruleAssociation();
 
                     state._fsp--;
 
 
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDiagramRule());
+                    						}
+                    						add(
+                    							current,
+                    							"assoc",
+                    							lv_assoc_5_0,
+                    							"org.smalluml.SmallUML.Association");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -235,45 +247,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmallUML.g:119:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
+                    // InternalSmallUML.g:122:4: (otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) ) )*
                     loop1:
                     do {
                         int alt1=2;
                         int LA1_0 = input.LA(1);
 
-                        if ( (LA1_0==15) ) {
+                        if ( (LA1_0==14) ) {
                             alt1=1;
                         }
 
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalSmallUML.g:120:5: otherlv_6= ',' ( ( ruleEString ) )
+                    	    // InternalSmallUML.g:123:5: otherlv_6= ',' ( (lv_assoc_7_0= ruleAssociation ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,15,FOLLOW_6); 
+                    	    otherlv_6=(Token)match(input,14,FOLLOW_5); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getDiagramAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalSmallUML.g:124:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:125:6: ( ruleEString )
+                    	    // InternalSmallUML.g:127:5: ( (lv_assoc_7_0= ruleAssociation ) )
+                    	    // InternalSmallUML.g:128:6: (lv_assoc_7_0= ruleAssociation )
                     	    {
-                    	    // InternalSmallUML.g:125:6: ( ruleEString )
-                    	    // InternalSmallUML.g:126:7: ruleEString
+                    	    // InternalSmallUML.g:128:6: (lv_assoc_7_0= ruleAssociation )
+                    	    // InternalSmallUML.g:129:7: lv_assoc_7_0= ruleAssociation
                     	    {
 
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getDiagramRule());
-                    	    							}
+                    	    							newCompositeNode(grammarAccess.getDiagramAccess().getAssocAssociationParserRuleCall_3_3_1_0());
                     	    						
-
-                    	    							newCompositeNode(grammarAccess.getDiagramAccess().getAssocAssociationCrossReference_3_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_assoc_7_0=ruleAssociation();
 
                     	    state._fsp--;
 
 
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getDiagramRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"assoc",
+                    	    								lv_assoc_7_0,
+                    	    								"org.smalluml.SmallUML.Association");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -291,9 +306,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,16,FOLLOW_8); 
+                    otherlv_8=(Token)match(input,15,FOLLOW_7); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getDiagramAccess().getRightParenthesisKeyword_3_4());
+                    				newLeafNode(otherlv_8, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_3_4());
                     			
 
                     }
@@ -301,45 +316,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmallUML.g:146:3: (otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
+            // InternalSmallUML.g:152:3: (otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==17) ) {
+            if ( (LA4_0==16) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
-                    // InternalSmallUML.g:147:4: otherlv_9= 'heritage' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
+                    // InternalSmallUML.g:153:4: otherlv_9= 'heritage' otherlv_10= '{' ( (lv_heritage_11_0= ruleHeritage ) ) (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )* otherlv_14= '}'
                     {
-                    otherlv_9=(Token)match(input,17,FOLLOW_5); 
+                    otherlv_9=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getDiagramAccess().getHeritageKeyword_4_0());
                     			
-                    otherlv_10=(Token)match(input,14,FOLLOW_6); 
+                    otherlv_10=(Token)match(input,12,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getDiagramAccess().getLeftParenthesisKeyword_4_1());
+                    				newLeafNode(otherlv_10, grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_4_1());
                     			
-                    // InternalSmallUML.g:155:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:156:5: ( ruleEString )
+                    // InternalSmallUML.g:161:4: ( (lv_heritage_11_0= ruleHeritage ) )
+                    // InternalSmallUML.g:162:5: (lv_heritage_11_0= ruleHeritage )
                     {
-                    // InternalSmallUML.g:156:5: ( ruleEString )
-                    // InternalSmallUML.g:157:6: ruleEString
+                    // InternalSmallUML.g:162:5: (lv_heritage_11_0= ruleHeritage )
+                    // InternalSmallUML.g:163:6: lv_heritage_11_0= ruleHeritage
                     {
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDiagramRule());
-                    						}
+                    						newCompositeNode(grammarAccess.getDiagramAccess().getHeritageHeritageParserRuleCall_4_2_0());
                     					
-
-                    						newCompositeNode(grammarAccess.getDiagramAccess().getHeritageHeritageCrossReference_4_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
+                    pushFollow(FOLLOW_6);
+                    lv_heritage_11_0=ruleHeritage();
 
                     state._fsp--;
 
 
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDiagramRule());
+                    						}
+                    						add(
+                    							current,
+                    							"heritage",
+                    							lv_heritage_11_0,
+                    							"org.smalluml.SmallUML.Heritage");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -348,45 +366,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmallUML.g:171:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
+                    // InternalSmallUML.g:180:4: (otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) ) )*
                     loop3:
                     do {
                         int alt3=2;
                         int LA3_0 = input.LA(1);
 
-                        if ( (LA3_0==15) ) {
+                        if ( (LA3_0==14) ) {
                             alt3=1;
                         }
 
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalSmallUML.g:172:5: otherlv_12= ',' ( ( ruleEString ) )
+                    	    // InternalSmallUML.g:181:5: otherlv_12= ',' ( (lv_heritage_13_0= ruleHeritage ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,15,FOLLOW_6); 
+                    	    otherlv_12=(Token)match(input,14,FOLLOW_8); 
 
                     	    					newLeafNode(otherlv_12, grammarAccess.getDiagramAccess().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalSmallUML.g:176:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:177:6: ( ruleEString )
+                    	    // InternalSmallUML.g:185:5: ( (lv_heritage_13_0= ruleHeritage ) )
+                    	    // InternalSmallUML.g:186:6: (lv_heritage_13_0= ruleHeritage )
                     	    {
-                    	    // InternalSmallUML.g:177:6: ( ruleEString )
-                    	    // InternalSmallUML.g:178:7: ruleEString
+                    	    // InternalSmallUML.g:186:6: (lv_heritage_13_0= ruleHeritage )
+                    	    // InternalSmallUML.g:187:7: lv_heritage_13_0= ruleHeritage
                     	    {
 
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getDiagramRule());
-                    	    							}
+                    	    							newCompositeNode(grammarAccess.getDiagramAccess().getHeritageHeritageParserRuleCall_4_3_1_0());
                     	    						
-
-                    	    							newCompositeNode(grammarAccess.getDiagramAccess().getHeritageHeritageCrossReference_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_heritage_13_0=ruleHeritage();
 
                     	    state._fsp--;
 
 
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getDiagramRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"heritage",
+                    	    								lv_heritage_13_0,
+                    	    								"org.smalluml.SmallUML.Heritage");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -404,9 +425,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,16,FOLLOW_9); 
+                    otherlv_14=(Token)match(input,15,FOLLOW_9); 
 
-                    				newLeafNode(otherlv_14, grammarAccess.getDiagramAccess().getRightParenthesisKeyword_4_4());
+                    				newLeafNode(otherlv_14, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_4_4());
                     			
 
                     }
@@ -414,45 +435,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmallUML.g:198:3: (otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')' )?
+            // InternalSmallUML.g:210:3: (otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==18) ) {
+            if ( (LA6_0==17) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSmallUML.g:199:4: otherlv_15= 'class' otherlv_16= '(' ( ( ruleEString ) ) (otherlv_18= ',' ( ( ruleEString ) ) )* otherlv_20= ')'
+                    // InternalSmallUML.g:211:4: otherlv_15= 'class' otherlv_16= '{' ( (lv_class_17_0= ruleClass ) ) (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )* otherlv_20= '}'
                     {
-                    otherlv_15=(Token)match(input,18,FOLLOW_5); 
+                    otherlv_15=(Token)match(input,17,FOLLOW_3); 
 
                     				newLeafNode(otherlv_15, grammarAccess.getDiagramAccess().getClassKeyword_5_0());
                     			
-                    otherlv_16=(Token)match(input,14,FOLLOW_6); 
+                    otherlv_16=(Token)match(input,12,FOLLOW_10); 
 
-                    				newLeafNode(otherlv_16, grammarAccess.getDiagramAccess().getLeftParenthesisKeyword_5_1());
+                    				newLeafNode(otherlv_16, grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalSmallUML.g:207:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:208:5: ( ruleEString )
+                    // InternalSmallUML.g:219:4: ( (lv_class_17_0= ruleClass ) )
+                    // InternalSmallUML.g:220:5: (lv_class_17_0= ruleClass )
                     {
-                    // InternalSmallUML.g:208:5: ( ruleEString )
-                    // InternalSmallUML.g:209:6: ruleEString
+                    // InternalSmallUML.g:220:5: (lv_class_17_0= ruleClass )
+                    // InternalSmallUML.g:221:6: lv_class_17_0= ruleClass
                     {
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDiagramRule());
-                    						}
+                    						newCompositeNode(grammarAccess.getDiagramAccess().getClassClassParserRuleCall_5_2_0());
                     					
-
-                    						newCompositeNode(grammarAccess.getDiagramAccess().getClassClassCrossReference_5_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
+                    pushFollow(FOLLOW_6);
+                    lv_class_17_0=ruleClass();
 
                     state._fsp--;
 
 
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDiagramRule());
+                    						}
+                    						add(
+                    							current,
+                    							"class",
+                    							lv_class_17_0,
+                    							"org.smalluml.SmallUML.Class");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -461,45 +485,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmallUML.g:223:4: (otherlv_18= ',' ( ( ruleEString ) ) )*
+                    // InternalSmallUML.g:238:4: (otherlv_18= ',' ( (lv_class_19_0= ruleClass ) ) )*
                     loop5:
                     do {
                         int alt5=2;
                         int LA5_0 = input.LA(1);
 
-                        if ( (LA5_0==15) ) {
+                        if ( (LA5_0==14) ) {
                             alt5=1;
                         }
 
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalSmallUML.g:224:5: otherlv_18= ',' ( ( ruleEString ) )
+                    	    // InternalSmallUML.g:239:5: otherlv_18= ',' ( (lv_class_19_0= ruleClass ) )
                     	    {
-                    	    otherlv_18=(Token)match(input,15,FOLLOW_6); 
+                    	    otherlv_18=(Token)match(input,14,FOLLOW_10); 
 
                     	    					newLeafNode(otherlv_18, grammarAccess.getDiagramAccess().getCommaKeyword_5_3_0());
                     	    				
-                    	    // InternalSmallUML.g:228:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:229:6: ( ruleEString )
+                    	    // InternalSmallUML.g:243:5: ( (lv_class_19_0= ruleClass ) )
+                    	    // InternalSmallUML.g:244:6: (lv_class_19_0= ruleClass )
                     	    {
-                    	    // InternalSmallUML.g:229:6: ( ruleEString )
-                    	    // InternalSmallUML.g:230:7: ruleEString
+                    	    // InternalSmallUML.g:244:6: (lv_class_19_0= ruleClass )
+                    	    // InternalSmallUML.g:245:7: lv_class_19_0= ruleClass
                     	    {
 
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getDiagramRule());
-                    	    							}
+                    	    							newCompositeNode(grammarAccess.getDiagramAccess().getClassClassParserRuleCall_5_3_1_0());
                     	    						
-
-                    	    							newCompositeNode(grammarAccess.getDiagramAccess().getClassClassCrossReference_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_class_19_0=ruleClass();
 
                     	    state._fsp--;
 
 
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getDiagramRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"class",
+                    	    								lv_class_19_0,
+                    	    								"org.smalluml.SmallUML.Class");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -517,9 +544,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_20=(Token)match(input,16,FOLLOW_10); 
+                    otherlv_20=(Token)match(input,15,FOLLOW_11); 
 
-                    				newLeafNode(otherlv_20, grammarAccess.getDiagramAccess().getRightParenthesisKeyword_5_4());
+                    				newLeafNode(otherlv_20, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_5_4());
                     			
 
                     }
@@ -527,7 +554,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_21=(Token)match(input,19,FOLLOW_2); 
+            otherlv_21=(Token)match(input,15,FOLLOW_2); 
 
             			newLeafNode(otherlv_21, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_6());
             		
@@ -553,8 +580,215 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDiagram"
 
 
+    // $ANTLR start "entryRuleType"
+    // InternalSmallUML.g:276:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    public final EObject entryRuleType() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleType = null;
+
+
+        try {
+            // InternalSmallUML.g:276:45: (iv_ruleType= ruleType EOF )
+            // InternalSmallUML.g:277:2: iv_ruleType= ruleType EOF
+            {
+             newCompositeNode(grammarAccess.getTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleType=ruleType();
+
+            state._fsp--;
+
+             current =iv_ruleType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleType"
+
+
+    // $ANTLR start "ruleType"
+    // InternalSmallUML.g:283:1: ruleType returns [EObject current=null] : (this_Type_Impl_0= ruleType_Impl | this_Float_1= ruleFloat | this_Int0_2= ruleInt0 | this_Boolean_3= ruleBoolean | this_String0_4= ruleString0 ) ;
+    public final EObject ruleType() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_Type_Impl_0 = null;
+
+        EObject this_Float_1 = null;
+
+        EObject this_Int0_2 = null;
+
+        EObject this_Boolean_3 = null;
+
+        EObject this_String0_4 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:289:2: ( (this_Type_Impl_0= ruleType_Impl | this_Float_1= ruleFloat | this_Int0_2= ruleInt0 | this_Boolean_3= ruleBoolean | this_String0_4= ruleString0 ) )
+            // InternalSmallUML.g:290:2: (this_Type_Impl_0= ruleType_Impl | this_Float_1= ruleFloat | this_Int0_2= ruleInt0 | this_Boolean_3= ruleBoolean | this_String0_4= ruleString0 )
+            {
+            // InternalSmallUML.g:290:2: (this_Type_Impl_0= ruleType_Impl | this_Float_1= ruleFloat | this_Int0_2= ruleInt0 | this_Boolean_3= ruleBoolean | this_String0_4= ruleString0 )
+            int alt7=5;
+            switch ( input.LA(1) ) {
+            case 34:
+                {
+                alt7=1;
+                }
+                break;
+            case 35:
+                {
+                alt7=2;
+                }
+                break;
+            case 36:
+                {
+                alt7=3;
+                }
+                break;
+            case 37:
+                {
+                alt7=4;
+                }
+                break;
+            case 38:
+                {
+                alt7=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt7) {
+                case 1 :
+                    // InternalSmallUML.g:291:3: this_Type_Impl_0= ruleType_Impl
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getType_ImplParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Type_Impl_0=ruleType_Impl();
+
+                    state._fsp--;
+
+
+                    			current = this_Type_Impl_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSmallUML.g:300:3: this_Float_1= ruleFloat
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getFloatParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Float_1=ruleFloat();
+
+                    state._fsp--;
+
+
+                    			current = this_Float_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSmallUML.g:309:3: this_Int0_2= ruleInt0
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getInt0ParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Int0_2=ruleInt0();
+
+                    state._fsp--;
+
+
+                    			current = this_Int0_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSmallUML.g:318:3: this_Boolean_3= ruleBoolean
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getBooleanParserRuleCall_3());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Boolean_3=ruleBoolean();
+
+                    state._fsp--;
+
+
+                    			current = this_Boolean_3;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSmallUML.g:327:3: this_String0_4= ruleString0
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getString0ParserRuleCall_4());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_String0_4=ruleString0();
+
+                    state._fsp--;
+
+
+                    			current = this_String0_4;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleType"
+
+
     // $ANTLR start "entryRuleAssociation"
-    // InternalSmallUML.g:258:1: entryRuleAssociation returns [EObject current=null] : iv_ruleAssociation= ruleAssociation EOF ;
+    // InternalSmallUML.g:339:1: entryRuleAssociation returns [EObject current=null] : iv_ruleAssociation= ruleAssociation EOF ;
     public final EObject entryRuleAssociation() throws RecognitionException {
         EObject current = null;
 
@@ -562,8 +796,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmallUML.g:258:52: (iv_ruleAssociation= ruleAssociation EOF )
-            // InternalSmallUML.g:259:2: iv_ruleAssociation= ruleAssociation EOF
+            // InternalSmallUML.g:339:52: (iv_ruleAssociation= ruleAssociation EOF )
+            // InternalSmallUML.g:340:2: iv_ruleAssociation= ruleAssociation EOF
             {
              newCompositeNode(grammarAccess.getAssociationRule()); 
             pushFollow(FOLLOW_1);
@@ -590,45 +824,41 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssociation"
-    // InternalSmallUML.g:265:1: ruleAssociation returns [EObject current=null] : (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'used' ( ( ruleEString ) ) otherlv_17= 'user' ( ( ruleEString ) ) otherlv_19= '}' ) ;
+    // InternalSmallUML.g:346:1: ruleAssociation returns [EObject current=null] : (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'used' ( (lv_used_4_0= ruleRole ) ) otherlv_5= 'user' ( (lv_user_6_0= ruleRole ) ) otherlv_7= '}' ) ;
     public final EObject ruleAssociation() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        Token otherlv_14=null;
-        Token otherlv_15=null;
-        Token otherlv_17=null;
-        Token otherlv_19=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_used_4_0 = null;
+
+        EObject lv_user_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSmallUML.g:271:2: ( (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'used' ( ( ruleEString ) ) otherlv_17= 'user' ( ( ruleEString ) ) otherlv_19= '}' ) )
-            // InternalSmallUML.g:272:2: (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'used' ( ( ruleEString ) ) otherlv_17= 'user' ( ( ruleEString ) ) otherlv_19= '}' )
+            // InternalSmallUML.g:352:2: ( (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'used' ( (lv_used_4_0= ruleRole ) ) otherlv_5= 'user' ( (lv_user_6_0= ruleRole ) ) otherlv_7= '}' ) )
+            // InternalSmallUML.g:353:2: (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'used' ( (lv_used_4_0= ruleRole ) ) otherlv_5= 'user' ( (lv_user_6_0= ruleRole ) ) otherlv_7= '}' )
             {
-            // InternalSmallUML.g:272:2: (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'used' ( ( ruleEString ) ) otherlv_17= 'user' ( ( ruleEString ) ) otherlv_19= '}' )
-            // InternalSmallUML.g:273:3: otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'used' ( ( ruleEString ) ) otherlv_17= 'user' ( ( ruleEString ) ) otherlv_19= '}'
+            // InternalSmallUML.g:353:2: (otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'used' ( (lv_used_4_0= ruleRole ) ) otherlv_5= 'user' ( (lv_user_6_0= ruleRole ) ) otherlv_7= '}' )
+            // InternalSmallUML.g:354:3: otherlv_0= 'Association' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'used' ( (lv_used_4_0= ruleRole ) ) otherlv_5= 'user' ( (lv_user_6_0= ruleRole ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_6); 
+            otherlv_0=(Token)match(input,18,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssociationAccess().getAssociationKeyword_0());
             		
-            // InternalSmallUML.g:277:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalSmallUML.g:278:4: (lv_name_1_0= ruleEString )
+            // InternalSmallUML.g:358:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalSmallUML.g:359:4: (lv_name_1_0= ruleEString )
             {
-            // InternalSmallUML.g:278:4: (lv_name_1_0= ruleEString )
-            // InternalSmallUML.g:279:5: lv_name_1_0= ruleEString
+            // InternalSmallUML.g:359:4: (lv_name_1_0= ruleEString )
+            // InternalSmallUML.g:360:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAssociationAccess().getNameEStringParserRuleCall_1_0());
@@ -655,260 +885,37 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_11); 
+            otherlv_2=(Token)match(input,12,FOLLOW_13); 
 
             			newLeafNode(otherlv_2, grammarAccess.getAssociationAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSmallUML.g:300:3: (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            otherlv_3=(Token)match(input,19,FOLLOW_14); 
 
-            if ( (LA8_0==21) ) {
-                alt8=1;
-            }
-            switch (alt8) {
-                case 1 :
-                    // InternalSmallUML.g:301:4: otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
-                    {
-                    otherlv_3=(Token)match(input,21,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getAssociationAccess().getMethodKeyword_3_0());
-                    			
-                    otherlv_4=(Token)match(input,14,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getAssociationAccess().getLeftParenthesisKeyword_3_1());
-                    			
-                    // InternalSmallUML.g:309:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:310:5: ( ruleEString )
-                    {
-                    // InternalSmallUML.g:310:5: ( ruleEString )
-                    // InternalSmallUML.g:311:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getAssociationRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getAssociationAccess().getMethodMethodCrossReference_3_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSmallUML.g:325:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
-                    loop7:
-                    do {
-                        int alt7=2;
-                        int LA7_0 = input.LA(1);
-
-                        if ( (LA7_0==15) ) {
-                            alt7=1;
-                        }
-
-
-                        switch (alt7) {
-                    	case 1 :
-                    	    // InternalSmallUML.g:326:5: otherlv_6= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_6=(Token)match(input,15,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_6, grammarAccess.getAssociationAccess().getCommaKeyword_3_3_0());
-                    	    				
-                    	    // InternalSmallUML.g:330:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:331:6: ( ruleEString )
-                    	    {
-                    	    // InternalSmallUML.g:331:6: ( ruleEString )
-                    	    // InternalSmallUML.g:332:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getAssociationRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getAssociationAccess().getMethodMethodCrossReference_3_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop7;
-                        }
-                    } while (true);
-
-                    otherlv_8=(Token)match(input,16,FOLLOW_12); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getAssociationAccess().getRightParenthesisKeyword_3_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalSmallUML.g:352:3: (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==22) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalSmallUML.g:353:4: otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
-                    {
-                    otherlv_9=(Token)match(input,22,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getAssociationAccess().getAttributeKeyword_4_0());
-                    			
-                    otherlv_10=(Token)match(input,14,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getAssociationAccess().getLeftParenthesisKeyword_4_1());
-                    			
-                    // InternalSmallUML.g:361:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:362:5: ( ruleEString )
-                    {
-                    // InternalSmallUML.g:362:5: ( ruleEString )
-                    // InternalSmallUML.g:363:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getAssociationRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getAssociationAccess().getAttributeTypeCrossReference_4_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSmallUML.g:377:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
-                    loop9:
-                    do {
-                        int alt9=2;
-                        int LA9_0 = input.LA(1);
-
-                        if ( (LA9_0==15) ) {
-                            alt9=1;
-                        }
-
-
-                        switch (alt9) {
-                    	case 1 :
-                    	    // InternalSmallUML.g:378:5: otherlv_12= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_12=(Token)match(input,15,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_12, grammarAccess.getAssociationAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalSmallUML.g:382:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:383:6: ( ruleEString )
-                    	    {
-                    	    // InternalSmallUML.g:383:6: ( ruleEString )
-                    	    // InternalSmallUML.g:384:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getAssociationRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getAssociationAccess().getAttributeTypeCrossReference_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop9;
-                        }
-                    } while (true);
-
-                    otherlv_14=(Token)match(input,16,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_14, grammarAccess.getAssociationAccess().getRightParenthesisKeyword_4_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_15=(Token)match(input,23,FOLLOW_6); 
-
-            			newLeafNode(otherlv_15, grammarAccess.getAssociationAccess().getUsedKeyword_5());
+            			newLeafNode(otherlv_3, grammarAccess.getAssociationAccess().getUsedKeyword_3());
             		
-            // InternalSmallUML.g:408:3: ( ( ruleEString ) )
-            // InternalSmallUML.g:409:4: ( ruleEString )
+            // InternalSmallUML.g:385:3: ( (lv_used_4_0= ruleRole ) )
+            // InternalSmallUML.g:386:4: (lv_used_4_0= ruleRole )
             {
-            // InternalSmallUML.g:409:4: ( ruleEString )
-            // InternalSmallUML.g:410:5: ruleEString
+            // InternalSmallUML.g:386:4: (lv_used_4_0= ruleRole )
+            // InternalSmallUML.g:387:5: lv_used_4_0= ruleRole
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAssociationRule());
-            					}
+            					newCompositeNode(grammarAccess.getAssociationAccess().getUsedRoleParserRuleCall_4_0());
             				
-
-            					newCompositeNode(grammarAccess.getAssociationAccess().getUsedRoleCrossReference_6_0());
-            				
-            pushFollow(FOLLOW_14);
-            ruleEString();
+            pushFollow(FOLLOW_15);
+            lv_used_4_0=ruleRole();
 
             state._fsp--;
 
 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAssociationRule());
+            					}
+            					set(
+            						current,
+            						"used",
+            						lv_used_4_0,
+            						"org.smalluml.SmallUML.Role");
             					afterParserOrEnumRuleCall();
             				
 
@@ -917,30 +924,33 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_17=(Token)match(input,24,FOLLOW_6); 
+            otherlv_5=(Token)match(input,20,FOLLOW_14); 
 
-            			newLeafNode(otherlv_17, grammarAccess.getAssociationAccess().getUserKeyword_7());
+            			newLeafNode(otherlv_5, grammarAccess.getAssociationAccess().getUserKeyword_5());
             		
-            // InternalSmallUML.g:428:3: ( ( ruleEString ) )
-            // InternalSmallUML.g:429:4: ( ruleEString )
+            // InternalSmallUML.g:408:3: ( (lv_user_6_0= ruleRole ) )
+            // InternalSmallUML.g:409:4: (lv_user_6_0= ruleRole )
             {
-            // InternalSmallUML.g:429:4: ( ruleEString )
-            // InternalSmallUML.g:430:5: ruleEString
+            // InternalSmallUML.g:409:4: (lv_user_6_0= ruleRole )
+            // InternalSmallUML.g:410:5: lv_user_6_0= ruleRole
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAssociationRule());
-            					}
+            					newCompositeNode(grammarAccess.getAssociationAccess().getUserRoleParserRuleCall_6_0());
             				
-
-            					newCompositeNode(grammarAccess.getAssociationAccess().getUserRoleCrossReference_8_0());
-            				
-            pushFollow(FOLLOW_10);
-            ruleEString();
+            pushFollow(FOLLOW_11);
+            lv_user_6_0=ruleRole();
 
             state._fsp--;
 
 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAssociationRule());
+            					}
+            					set(
+            						current,
+            						"user",
+            						lv_user_6_0,
+            						"org.smalluml.SmallUML.Role");
             					afterParserOrEnumRuleCall();
             				
 
@@ -949,9 +959,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_19=(Token)match(input,19,FOLLOW_2); 
+            otherlv_7=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_19, grammarAccess.getAssociationAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_7, grammarAccess.getAssociationAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -976,7 +986,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeritage"
-    // InternalSmallUML.g:452:1: entryRuleHeritage returns [EObject current=null] : iv_ruleHeritage= ruleHeritage EOF ;
+    // InternalSmallUML.g:435:1: entryRuleHeritage returns [EObject current=null] : iv_ruleHeritage= ruleHeritage EOF ;
     public final EObject entryRuleHeritage() throws RecognitionException {
         EObject current = null;
 
@@ -984,8 +994,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmallUML.g:452:49: (iv_ruleHeritage= ruleHeritage EOF )
-            // InternalSmallUML.g:453:2: iv_ruleHeritage= ruleHeritage EOF
+            // InternalSmallUML.g:435:49: (iv_ruleHeritage= ruleHeritage EOF )
+            // InternalSmallUML.g:436:2: iv_ruleHeritage= ruleHeritage EOF
             {
              newCompositeNode(grammarAccess.getHeritageRule()); 
             pushFollow(FOLLOW_1);
@@ -1012,45 +1022,41 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeritage"
-    // InternalSmallUML.g:459:1: ruleHeritage returns [EObject current=null] : (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'mother' ( ( ruleEString ) ) otherlv_17= 'child' ( ( ruleEString ) ) otherlv_19= '}' ) ;
+    // InternalSmallUML.g:442:1: ruleHeritage returns [EObject current=null] : (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'mother' ( (lv_mother_4_0= ruleRole ) ) otherlv_5= 'child' ( (lv_child_6_0= ruleRole ) ) otherlv_7= '}' ) ;
     public final EObject ruleHeritage() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        Token otherlv_14=null;
-        Token otherlv_15=null;
-        Token otherlv_17=null;
-        Token otherlv_19=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_mother_4_0 = null;
+
+        EObject lv_child_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSmallUML.g:465:2: ( (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'mother' ( ( ruleEString ) ) otherlv_17= 'child' ( ( ruleEString ) ) otherlv_19= '}' ) )
-            // InternalSmallUML.g:466:2: (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'mother' ( ( ruleEString ) ) otherlv_17= 'child' ( ( ruleEString ) ) otherlv_19= '}' )
+            // InternalSmallUML.g:448:2: ( (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'mother' ( (lv_mother_4_0= ruleRole ) ) otherlv_5= 'child' ( (lv_child_6_0= ruleRole ) ) otherlv_7= '}' ) )
+            // InternalSmallUML.g:449:2: (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'mother' ( (lv_mother_4_0= ruleRole ) ) otherlv_5= 'child' ( (lv_child_6_0= ruleRole ) ) otherlv_7= '}' )
             {
-            // InternalSmallUML.g:466:2: (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'mother' ( ( ruleEString ) ) otherlv_17= 'child' ( ( ruleEString ) ) otherlv_19= '}' )
-            // InternalSmallUML.g:467:3: otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= 'mother' ( ( ruleEString ) ) otherlv_17= 'child' ( ( ruleEString ) ) otherlv_19= '}'
+            // InternalSmallUML.g:449:2: (otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'mother' ( (lv_mother_4_0= ruleRole ) ) otherlv_5= 'child' ( (lv_child_6_0= ruleRole ) ) otherlv_7= '}' )
+            // InternalSmallUML.g:450:3: otherlv_0= 'Heritage' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'mother' ( (lv_mother_4_0= ruleRole ) ) otherlv_5= 'child' ( (lv_child_6_0= ruleRole ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_6); 
+            otherlv_0=(Token)match(input,21,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getHeritageAccess().getHeritageKeyword_0());
             		
-            // InternalSmallUML.g:471:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalSmallUML.g:472:4: (lv_name_1_0= ruleEString )
+            // InternalSmallUML.g:454:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalSmallUML.g:455:4: (lv_name_1_0= ruleEString )
             {
-            // InternalSmallUML.g:472:4: (lv_name_1_0= ruleEString )
-            // InternalSmallUML.g:473:5: lv_name_1_0= ruleEString
+            // InternalSmallUML.g:455:4: (lv_name_1_0= ruleEString )
+            // InternalSmallUML.g:456:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getHeritageAccess().getNameEStringParserRuleCall_1_0());
@@ -1077,260 +1083,37 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_15); 
+            otherlv_2=(Token)match(input,12,FOLLOW_16); 
 
             			newLeafNode(otherlv_2, grammarAccess.getHeritageAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSmallUML.g:494:3: (otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            otherlv_3=(Token)match(input,22,FOLLOW_14); 
 
-            if ( (LA12_0==21) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalSmallUML.g:495:4: otherlv_3= 'method' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
-                    {
-                    otherlv_3=(Token)match(input,21,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getHeritageAccess().getMethodKeyword_3_0());
-                    			
-                    otherlv_4=(Token)match(input,14,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getHeritageAccess().getLeftParenthesisKeyword_3_1());
-                    			
-                    // InternalSmallUML.g:503:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:504:5: ( ruleEString )
-                    {
-                    // InternalSmallUML.g:504:5: ( ruleEString )
-                    // InternalSmallUML.g:505:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getHeritageRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getHeritageAccess().getMethodMethodCrossReference_3_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSmallUML.g:519:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
-                    loop11:
-                    do {
-                        int alt11=2;
-                        int LA11_0 = input.LA(1);
-
-                        if ( (LA11_0==15) ) {
-                            alt11=1;
-                        }
-
-
-                        switch (alt11) {
-                    	case 1 :
-                    	    // InternalSmallUML.g:520:5: otherlv_6= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_6=(Token)match(input,15,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_6, grammarAccess.getHeritageAccess().getCommaKeyword_3_3_0());
-                    	    				
-                    	    // InternalSmallUML.g:524:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:525:6: ( ruleEString )
-                    	    {
-                    	    // InternalSmallUML.g:525:6: ( ruleEString )
-                    	    // InternalSmallUML.g:526:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getHeritageRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getHeritageAccess().getMethodMethodCrossReference_3_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop11;
-                        }
-                    } while (true);
-
-                    otherlv_8=(Token)match(input,16,FOLLOW_16); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getHeritageAccess().getRightParenthesisKeyword_3_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalSmallUML.g:546:3: (otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==22) ) {
-                alt14=1;
-            }
-            switch (alt14) {
-                case 1 :
-                    // InternalSmallUML.g:547:4: otherlv_9= 'attribute' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
-                    {
-                    otherlv_9=(Token)match(input,22,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getHeritageAccess().getAttributeKeyword_4_0());
-                    			
-                    otherlv_10=(Token)match(input,14,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getHeritageAccess().getLeftParenthesisKeyword_4_1());
-                    			
-                    // InternalSmallUML.g:555:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:556:5: ( ruleEString )
-                    {
-                    // InternalSmallUML.g:556:5: ( ruleEString )
-                    // InternalSmallUML.g:557:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getHeritageRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getHeritageAccess().getAttributeTypeCrossReference_4_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSmallUML.g:571:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
-                    loop13:
-                    do {
-                        int alt13=2;
-                        int LA13_0 = input.LA(1);
-
-                        if ( (LA13_0==15) ) {
-                            alt13=1;
-                        }
-
-
-                        switch (alt13) {
-                    	case 1 :
-                    	    // InternalSmallUML.g:572:5: otherlv_12= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_12=(Token)match(input,15,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_12, grammarAccess.getHeritageAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalSmallUML.g:576:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:577:6: ( ruleEString )
-                    	    {
-                    	    // InternalSmallUML.g:577:6: ( ruleEString )
-                    	    // InternalSmallUML.g:578:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getHeritageRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getHeritageAccess().getAttributeTypeCrossReference_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop13;
-                        }
-                    } while (true);
-
-                    otherlv_14=(Token)match(input,16,FOLLOW_17); 
-
-                    				newLeafNode(otherlv_14, grammarAccess.getHeritageAccess().getRightParenthesisKeyword_4_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_15=(Token)match(input,26,FOLLOW_6); 
-
-            			newLeafNode(otherlv_15, grammarAccess.getHeritageAccess().getMotherKeyword_5());
+            			newLeafNode(otherlv_3, grammarAccess.getHeritageAccess().getMotherKeyword_3());
             		
-            // InternalSmallUML.g:602:3: ( ( ruleEString ) )
-            // InternalSmallUML.g:603:4: ( ruleEString )
+            // InternalSmallUML.g:481:3: ( (lv_mother_4_0= ruleRole ) )
+            // InternalSmallUML.g:482:4: (lv_mother_4_0= ruleRole )
             {
-            // InternalSmallUML.g:603:4: ( ruleEString )
-            // InternalSmallUML.g:604:5: ruleEString
+            // InternalSmallUML.g:482:4: (lv_mother_4_0= ruleRole )
+            // InternalSmallUML.g:483:5: lv_mother_4_0= ruleRole
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getHeritageRule());
-            					}
+            					newCompositeNode(grammarAccess.getHeritageAccess().getMotherRoleParserRuleCall_4_0());
             				
-
-            					newCompositeNode(grammarAccess.getHeritageAccess().getMotherRoleCrossReference_6_0());
-            				
-            pushFollow(FOLLOW_18);
-            ruleEString();
+            pushFollow(FOLLOW_17);
+            lv_mother_4_0=ruleRole();
 
             state._fsp--;
 
 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getHeritageRule());
+            					}
+            					set(
+            						current,
+            						"mother",
+            						lv_mother_4_0,
+            						"org.smalluml.SmallUML.Role");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1339,30 +1122,33 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_17=(Token)match(input,27,FOLLOW_6); 
+            otherlv_5=(Token)match(input,23,FOLLOW_14); 
 
-            			newLeafNode(otherlv_17, grammarAccess.getHeritageAccess().getChildKeyword_7());
+            			newLeafNode(otherlv_5, grammarAccess.getHeritageAccess().getChildKeyword_5());
             		
-            // InternalSmallUML.g:622:3: ( ( ruleEString ) )
-            // InternalSmallUML.g:623:4: ( ruleEString )
+            // InternalSmallUML.g:504:3: ( (lv_child_6_0= ruleRole ) )
+            // InternalSmallUML.g:505:4: (lv_child_6_0= ruleRole )
             {
-            // InternalSmallUML.g:623:4: ( ruleEString )
-            // InternalSmallUML.g:624:5: ruleEString
+            // InternalSmallUML.g:505:4: (lv_child_6_0= ruleRole )
+            // InternalSmallUML.g:506:5: lv_child_6_0= ruleRole
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getHeritageRule());
-            					}
+            					newCompositeNode(grammarAccess.getHeritageAccess().getChildRoleParserRuleCall_6_0());
             				
-
-            					newCompositeNode(grammarAccess.getHeritageAccess().getChildRoleCrossReference_8_0());
-            				
-            pushFollow(FOLLOW_10);
-            ruleEString();
+            pushFollow(FOLLOW_11);
+            lv_child_6_0=ruleRole();
 
             state._fsp--;
 
 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getHeritageRule());
+            					}
+            					set(
+            						current,
+            						"child",
+            						lv_child_6_0,
+            						"org.smalluml.SmallUML.Role");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1371,9 +1157,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_19=(Token)match(input,19,FOLLOW_2); 
+            otherlv_7=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_19, grammarAccess.getHeritageAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_7, grammarAccess.getHeritageAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -1397,25 +1183,25 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleHeritage"
 
 
-    // $ANTLR start "entryRuleClass_Impl"
-    // InternalSmallUML.g:646:1: entryRuleClass_Impl returns [EObject current=null] : iv_ruleClass_Impl= ruleClass_Impl EOF ;
-    public final EObject entryRuleClass_Impl() throws RecognitionException {
+    // $ANTLR start "entryRuleClass"
+    // InternalSmallUML.g:531:1: entryRuleClass returns [EObject current=null] : iv_ruleClass= ruleClass EOF ;
+    public final EObject entryRuleClass() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleClass_Impl = null;
+        EObject iv_ruleClass = null;
 
 
         try {
-            // InternalSmallUML.g:646:51: (iv_ruleClass_Impl= ruleClass_Impl EOF )
-            // InternalSmallUML.g:647:2: iv_ruleClass_Impl= ruleClass_Impl EOF
+            // InternalSmallUML.g:531:46: (iv_ruleClass= ruleClass EOF )
+            // InternalSmallUML.g:532:2: iv_ruleClass= ruleClass EOF
             {
-             newCompositeNode(grammarAccess.getClass_ImplRule()); 
+             newCompositeNode(grammarAccess.getClassRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleClass_Impl=ruleClass_Impl();
+            iv_ruleClass=ruleClass();
 
             state._fsp--;
 
-             current =iv_ruleClass_Impl; 
+             current =iv_ruleClass; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1430,12 +1216,12 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleClass_Impl"
+    // $ANTLR end "entryRuleClass"
 
 
-    // $ANTLR start "ruleClass_Impl"
-    // InternalSmallUML.g:653:1: ruleClass_Impl returns [EObject current=null] : ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= '}' ) ;
-    public final EObject ruleClass_Impl() throws RecognitionException {
+    // $ANTLR start "ruleClass"
+    // InternalSmallUML.g:538:1: ruleClass returns [EObject current=null] : ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}' )? (otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
+    public final EObject ruleClass() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -1451,40 +1237,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         Token otherlv_16=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
+        EObject lv_method_6_0 = null;
+
+        EObject lv_method_8_0 = null;
+
+        EObject lv_attribute_12_0 = null;
+
+        EObject lv_attribute_14_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSmallUML.g:659:2: ( ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= '}' ) )
-            // InternalSmallUML.g:660:2: ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= '}' )
+            // InternalSmallUML.g:544:2: ( ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}' )? (otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
+            // InternalSmallUML.g:545:2: ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}' )? (otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
             {
-            // InternalSmallUML.g:660:2: ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= '}' )
-            // InternalSmallUML.g:661:3: () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= '}'
+            // InternalSmallUML.g:545:2: ( () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}' )? (otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalSmallUML.g:546:3: () otherlv_1= 'Class' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}' )? (otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}' )? otherlv_16= '}'
             {
-            // InternalSmallUML.g:661:3: ()
-            // InternalSmallUML.g:662:4: 
+            // InternalSmallUML.g:546:3: ()
+            // InternalSmallUML.g:547:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getClass_ImplAccess().getClassAction_0(),
+            					grammarAccess.getClassAccess().getClassAction_0(),
             					current);
             			
 
             }
 
-            otherlv_1=(Token)match(input,28,FOLLOW_6); 
+            otherlv_1=(Token)match(input,24,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getClass_ImplAccess().getClassKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getClassAccess().getClassKeyword_1());
             		
-            // InternalSmallUML.g:672:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalSmallUML.g:673:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:557:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:558:4: (lv_name_2_0= ruleEString )
             {
-            // InternalSmallUML.g:673:4: (lv_name_2_0= ruleEString )
-            // InternalSmallUML.g:674:5: lv_name_2_0= ruleEString
+            // InternalSmallUML.g:558:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:559:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getClass_ImplAccess().getNameEStringParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getClassAccess().getNameEStringParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_3);
             lv_name_2_0=ruleEString();
@@ -1493,7 +1287,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getClass_ImplRule());
+            						current = createModelElementForParent(grammarAccess.getClassRule());
             					}
             					set(
             						current,
@@ -1508,49 +1302,52 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_19); 
+            otherlv_3=(Token)match(input,12,FOLLOW_18); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getClass_ImplAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getClassAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSmallUML.g:695:3: (otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalSmallUML.g:580:3: (otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}' )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA16_0==21) ) {
-                alt16=1;
+            if ( (LA9_0==25) ) {
+                alt9=1;
             }
-            switch (alt16) {
+            switch (alt9) {
                 case 1 :
-                    // InternalSmallUML.g:696:4: otherlv_4= 'method' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')'
+                    // InternalSmallUML.g:581:4: otherlv_4= 'method' otherlv_5= '{' ( (lv_method_6_0= ruleMethod ) ) (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )* otherlv_9= '}'
                     {
-                    otherlv_4=(Token)match(input,21,FOLLOW_5); 
+                    otherlv_4=(Token)match(input,25,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getClass_ImplAccess().getMethodKeyword_4_0());
+                    				newLeafNode(otherlv_4, grammarAccess.getClassAccess().getMethodKeyword_4_0());
                     			
-                    otherlv_5=(Token)match(input,14,FOLLOW_6); 
+                    otherlv_5=(Token)match(input,12,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getClass_ImplAccess().getLeftParenthesisKeyword_4_1());
+                    				newLeafNode(otherlv_5, grammarAccess.getClassAccess().getLeftCurlyBracketKeyword_4_1());
                     			
-                    // InternalSmallUML.g:704:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:705:5: ( ruleEString )
+                    // InternalSmallUML.g:589:4: ( (lv_method_6_0= ruleMethod ) )
+                    // InternalSmallUML.g:590:5: (lv_method_6_0= ruleMethod )
                     {
-                    // InternalSmallUML.g:705:5: ( ruleEString )
-                    // InternalSmallUML.g:706:6: ruleEString
+                    // InternalSmallUML.g:590:5: (lv_method_6_0= ruleMethod )
+                    // InternalSmallUML.g:591:6: lv_method_6_0= ruleMethod
                     {
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getClass_ImplRule());
-                    						}
+                    						newCompositeNode(grammarAccess.getClassAccess().getMethodMethodParserRuleCall_4_2_0());
                     					
-
-                    						newCompositeNode(grammarAccess.getClass_ImplAccess().getMethodMethodCrossReference_4_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
+                    pushFollow(FOLLOW_6);
+                    lv_method_6_0=ruleMethod();
 
                     state._fsp--;
 
 
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getClassRule());
+                    						}
+                    						add(
+                    							current,
+                    							"method",
+                    							lv_method_6_0,
+                    							"org.smalluml.SmallUML.Method");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -1559,45 +1356,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmallUML.g:720:4: (otherlv_7= ',' ( ( ruleEString ) ) )*
-                    loop15:
+                    // InternalSmallUML.g:608:4: (otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) ) )*
+                    loop8:
                     do {
-                        int alt15=2;
-                        int LA15_0 = input.LA(1);
+                        int alt8=2;
+                        int LA8_0 = input.LA(1);
 
-                        if ( (LA15_0==15) ) {
-                            alt15=1;
+                        if ( (LA8_0==14) ) {
+                            alt8=1;
                         }
 
 
-                        switch (alt15) {
+                        switch (alt8) {
                     	case 1 :
-                    	    // InternalSmallUML.g:721:5: otherlv_7= ',' ( ( ruleEString ) )
+                    	    // InternalSmallUML.g:609:5: otherlv_7= ',' ( (lv_method_8_0= ruleMethod ) )
                     	    {
-                    	    otherlv_7=(Token)match(input,15,FOLLOW_6); 
+                    	    otherlv_7=(Token)match(input,14,FOLLOW_19); 
 
-                    	    					newLeafNode(otherlv_7, grammarAccess.getClass_ImplAccess().getCommaKeyword_4_3_0());
+                    	    					newLeafNode(otherlv_7, grammarAccess.getClassAccess().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalSmallUML.g:725:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:726:6: ( ruleEString )
+                    	    // InternalSmallUML.g:613:5: ( (lv_method_8_0= ruleMethod ) )
+                    	    // InternalSmallUML.g:614:6: (lv_method_8_0= ruleMethod )
                     	    {
-                    	    // InternalSmallUML.g:726:6: ( ruleEString )
-                    	    // InternalSmallUML.g:727:7: ruleEString
+                    	    // InternalSmallUML.g:614:6: (lv_method_8_0= ruleMethod )
+                    	    // InternalSmallUML.g:615:7: lv_method_8_0= ruleMethod
                     	    {
 
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getClass_ImplRule());
-                    	    							}
+                    	    							newCompositeNode(grammarAccess.getClassAccess().getMethodMethodParserRuleCall_4_3_1_0());
                     	    						
-
-                    	    							newCompositeNode(grammarAccess.getClass_ImplAccess().getMethodMethodCrossReference_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_method_8_0=ruleMethod();
 
                     	    state._fsp--;
 
 
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getClassRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"method",
+                    	    								lv_method_8_0,
+                    	    								"org.smalluml.SmallUML.Method");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -1611,13 +1411,13 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop15;
+                    	    break loop8;
                         }
                     } while (true);
 
-                    otherlv_9=(Token)match(input,16,FOLLOW_20); 
+                    otherlv_9=(Token)match(input,15,FOLLOW_20); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getClass_ImplAccess().getRightParenthesisKeyword_4_4());
+                    				newLeafNode(otherlv_9, grammarAccess.getClassAccess().getRightCurlyBracketKeyword_4_4());
                     			
 
                     }
@@ -1625,45 +1425,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmallUML.g:747:3: (otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalSmallUML.g:638:3: (otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA18_0==22) ) {
-                alt18=1;
+            if ( (LA11_0==26) ) {
+                alt11=1;
             }
-            switch (alt18) {
+            switch (alt11) {
                 case 1 :
-                    // InternalSmallUML.g:748:4: otherlv_10= 'attribute' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')'
+                    // InternalSmallUML.g:639:4: otherlv_10= 'attribute' otherlv_11= '{' ( (lv_attribute_12_0= ruleType ) ) (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )* otherlv_15= '}'
                     {
-                    otherlv_10=(Token)match(input,22,FOLLOW_5); 
+                    otherlv_10=(Token)match(input,26,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getClass_ImplAccess().getAttributeKeyword_5_0());
+                    				newLeafNode(otherlv_10, grammarAccess.getClassAccess().getAttributeKeyword_5_0());
                     			
-                    otherlv_11=(Token)match(input,14,FOLLOW_6); 
+                    otherlv_11=(Token)match(input,12,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_11, grammarAccess.getClass_ImplAccess().getLeftParenthesisKeyword_5_1());
+                    				newLeafNode(otherlv_11, grammarAccess.getClassAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalSmallUML.g:756:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:757:5: ( ruleEString )
+                    // InternalSmallUML.g:647:4: ( (lv_attribute_12_0= ruleType ) )
+                    // InternalSmallUML.g:648:5: (lv_attribute_12_0= ruleType )
                     {
-                    // InternalSmallUML.g:757:5: ( ruleEString )
-                    // InternalSmallUML.g:758:6: ruleEString
+                    // InternalSmallUML.g:648:5: (lv_attribute_12_0= ruleType )
+                    // InternalSmallUML.g:649:6: lv_attribute_12_0= ruleType
                     {
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getClass_ImplRule());
-                    						}
+                    						newCompositeNode(grammarAccess.getClassAccess().getAttributeTypeParserRuleCall_5_2_0());
                     					
-
-                    						newCompositeNode(grammarAccess.getClass_ImplAccess().getAttributeTypeCrossReference_5_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
+                    pushFollow(FOLLOW_6);
+                    lv_attribute_12_0=ruleType();
 
                     state._fsp--;
 
 
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getClassRule());
+                    						}
+                    						add(
+                    							current,
+                    							"attribute",
+                    							lv_attribute_12_0,
+                    							"org.smalluml.SmallUML.Type");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -1672,45 +1475,48 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmallUML.g:772:4: (otherlv_13= ',' ( ( ruleEString ) ) )*
-                    loop17:
+                    // InternalSmallUML.g:666:4: (otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) ) )*
+                    loop10:
                     do {
-                        int alt17=2;
-                        int LA17_0 = input.LA(1);
+                        int alt10=2;
+                        int LA10_0 = input.LA(1);
 
-                        if ( (LA17_0==15) ) {
-                            alt17=1;
+                        if ( (LA10_0==14) ) {
+                            alt10=1;
                         }
 
 
-                        switch (alt17) {
+                        switch (alt10) {
                     	case 1 :
-                    	    // InternalSmallUML.g:773:5: otherlv_13= ',' ( ( ruleEString ) )
+                    	    // InternalSmallUML.g:667:5: otherlv_13= ',' ( (lv_attribute_14_0= ruleType ) )
                     	    {
-                    	    otherlv_13=(Token)match(input,15,FOLLOW_6); 
+                    	    otherlv_13=(Token)match(input,14,FOLLOW_21); 
 
-                    	    					newLeafNode(otherlv_13, grammarAccess.getClass_ImplAccess().getCommaKeyword_5_3_0());
+                    	    					newLeafNode(otherlv_13, grammarAccess.getClassAccess().getCommaKeyword_5_3_0());
                     	    				
-                    	    // InternalSmallUML.g:777:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:778:6: ( ruleEString )
+                    	    // InternalSmallUML.g:671:5: ( (lv_attribute_14_0= ruleType ) )
+                    	    // InternalSmallUML.g:672:6: (lv_attribute_14_0= ruleType )
                     	    {
-                    	    // InternalSmallUML.g:778:6: ( ruleEString )
-                    	    // InternalSmallUML.g:779:7: ruleEString
+                    	    // InternalSmallUML.g:672:6: (lv_attribute_14_0= ruleType )
+                    	    // InternalSmallUML.g:673:7: lv_attribute_14_0= ruleType
                     	    {
 
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getClass_ImplRule());
-                    	    							}
+                    	    							newCompositeNode(grammarAccess.getClassAccess().getAttributeTypeParserRuleCall_5_3_1_0());
                     	    						
-
-                    	    							newCompositeNode(grammarAccess.getClass_ImplAccess().getAttributeTypeCrossReference_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_attribute_14_0=ruleType();
 
                     	    state._fsp--;
 
 
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getClassRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"attribute",
+                    	    								lv_attribute_14_0,
+                    	    								"org.smalluml.SmallUML.Type");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -1724,13 +1530,13 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop17;
+                    	    break loop10;
                         }
                     } while (true);
 
-                    otherlv_15=(Token)match(input,16,FOLLOW_10); 
+                    otherlv_15=(Token)match(input,15,FOLLOW_11); 
 
-                    				newLeafNode(otherlv_15, grammarAccess.getClass_ImplAccess().getRightParenthesisKeyword_5_4());
+                    				newLeafNode(otherlv_15, grammarAccess.getClassAccess().getRightCurlyBracketKeyword_5_4());
                     			
 
                     }
@@ -1738,9 +1544,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_16=(Token)match(input,19,FOLLOW_2); 
+            otherlv_16=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_16, grammarAccess.getClass_ImplAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_16, grammarAccess.getClassAccess().getRightCurlyBracketKeyword_6());
             		
 
             }
@@ -1761,11 +1567,11 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleClass_Impl"
+    // $ANTLR end "ruleClass"
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalSmallUML.g:807:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalSmallUML.g:704:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1773,8 +1579,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmallUML.g:807:47: (iv_ruleEString= ruleEString EOF )
-            // InternalSmallUML.g:808:2: iv_ruleEString= ruleEString EOF
+            // InternalSmallUML.g:704:47: (iv_ruleEString= ruleEString EOF )
+            // InternalSmallUML.g:705:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -1801,7 +1607,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalSmallUML.g:814:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalSmallUML.g:711:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1812,28 +1618,28 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmallUML.g:820:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalSmallUML.g:821:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalSmallUML.g:717:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalSmallUML.g:718:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalSmallUML.g:821:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalSmallUML.g:718:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA19_0==RULE_STRING) ) {
-                alt19=1;
+            if ( (LA12_0==RULE_STRING) ) {
+                alt12=1;
             }
-            else if ( (LA19_0==RULE_ID) ) {
-                alt19=2;
+            else if ( (LA12_0==RULE_ID) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt12) {
                 case 1 :
-                    // InternalSmallUML.g:822:3: this_STRING_0= RULE_STRING
+                    // InternalSmallUML.g:719:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1846,7 +1652,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmallUML.g:830:3: this_ID_1= RULE_ID
+                    // InternalSmallUML.g:727:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1880,98 +1686,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEString"
 
 
-    // $ANTLR start "entryRuleType_Impl"
-    // InternalSmallUML.g:841:1: entryRuleType_Impl returns [EObject current=null] : iv_ruleType_Impl= ruleType_Impl EOF ;
-    public final EObject entryRuleType_Impl() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleType_Impl = null;
-
-
-        try {
-            // InternalSmallUML.g:841:50: (iv_ruleType_Impl= ruleType_Impl EOF )
-            // InternalSmallUML.g:842:2: iv_ruleType_Impl= ruleType_Impl EOF
-            {
-             newCompositeNode(grammarAccess.getType_ImplRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleType_Impl=ruleType_Impl();
-
-            state._fsp--;
-
-             current =iv_ruleType_Impl; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleType_Impl"
-
-
-    // $ANTLR start "ruleType_Impl"
-    // InternalSmallUML.g:848:1: ruleType_Impl returns [EObject current=null] : ( () otherlv_1= 'Type' ) ;
-    public final EObject ruleType_Impl() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSmallUML.g:854:2: ( ( () otherlv_1= 'Type' ) )
-            // InternalSmallUML.g:855:2: ( () otherlv_1= 'Type' )
-            {
-            // InternalSmallUML.g:855:2: ( () otherlv_1= 'Type' )
-            // InternalSmallUML.g:856:3: () otherlv_1= 'Type'
-            {
-            // InternalSmallUML.g:856:3: ()
-            // InternalSmallUML.g:857:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getType_ImplAccess().getTypeAction_0(),
-            					current);
-            			
-
-            }
-
-            otherlv_1=(Token)match(input,29,FOLLOW_2); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getType_ImplAccess().getTypeKeyword_1());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleType_Impl"
-
-
     // $ANTLR start "entryRuleRole"
-    // InternalSmallUML.g:871:1: entryRuleRole returns [EObject current=null] : iv_ruleRole= ruleRole EOF ;
+    // InternalSmallUML.g:738:1: entryRuleRole returns [EObject current=null] : iv_ruleRole= ruleRole EOF ;
     public final EObject entryRuleRole() throws RecognitionException {
         EObject current = null;
 
@@ -1979,8 +1695,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmallUML.g:871:45: (iv_ruleRole= ruleRole EOF )
-            // InternalSmallUML.g:872:2: iv_ruleRole= ruleRole EOF
+            // InternalSmallUML.g:738:45: (iv_ruleRole= ruleRole EOF )
+            // InternalSmallUML.g:739:2: iv_ruleRole= ruleRole EOF
             {
              newCompositeNode(grammarAccess.getRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -2007,7 +1723,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRole"
-    // InternalSmallUML.g:878:1: ruleRole returns [EObject current=null] : (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) (otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? (otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )? otherlv_19= 'class' ( ( ruleEString ) ) otherlv_21= '}' ) ;
+    // InternalSmallUML.g:745:1: ruleRole returns [EObject current=null] : (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) otherlv_7= 'class' ( (lv_class_8_0= ruleClass ) ) otherlv_9= '}' ) ;
     public final EObject ruleRole() throws RecognitionException {
         EObject current = null;
 
@@ -2016,41 +1732,35 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        Token otherlv_13=null;
-        Token otherlv_14=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
-        Token otherlv_19=null;
-        Token otherlv_21=null;
+        Token otherlv_9=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
         AntlrDatatypeRuleToken lv_upper_4_0 = null;
 
         AntlrDatatypeRuleToken lv_lower_6_0 = null;
 
+        EObject lv_class_8_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSmallUML.g:884:2: ( (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) (otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? (otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )? otherlv_19= 'class' ( ( ruleEString ) ) otherlv_21= '}' ) )
-            // InternalSmallUML.g:885:2: (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) (otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? (otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )? otherlv_19= 'class' ( ( ruleEString ) ) otherlv_21= '}' )
+            // InternalSmallUML.g:751:2: ( (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) otherlv_7= 'class' ( (lv_class_8_0= ruleClass ) ) otherlv_9= '}' ) )
+            // InternalSmallUML.g:752:2: (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) otherlv_7= 'class' ( (lv_class_8_0= ruleClass ) ) otherlv_9= '}' )
             {
-            // InternalSmallUML.g:885:2: (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) (otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? (otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )? otherlv_19= 'class' ( ( ruleEString ) ) otherlv_21= '}' )
-            // InternalSmallUML.g:886:3: otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) (otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? (otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )? otherlv_19= 'class' ( ( ruleEString ) ) otherlv_21= '}'
+            // InternalSmallUML.g:752:2: (otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) otherlv_7= 'class' ( (lv_class_8_0= ruleClass ) ) otherlv_9= '}' )
+            // InternalSmallUML.g:753:3: otherlv_0= 'Role' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'upper' ( (lv_upper_4_0= ruleEInt ) ) otherlv_5= 'lower' ( (lv_lower_6_0= ruleEInt ) ) otherlv_7= 'class' ( (lv_class_8_0= ruleClass ) ) otherlv_9= '}'
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_6); 
+            otherlv_0=(Token)match(input,27,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRoleAccess().getRoleKeyword_0());
             		
-            // InternalSmallUML.g:890:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalSmallUML.g:891:4: (lv_name_1_0= ruleEString )
+            // InternalSmallUML.g:757:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalSmallUML.g:758:4: (lv_name_1_0= ruleEString )
             {
-            // InternalSmallUML.g:891:4: (lv_name_1_0= ruleEString )
-            // InternalSmallUML.g:892:5: lv_name_1_0= ruleEString
+            // InternalSmallUML.g:758:4: (lv_name_1_0= ruleEString )
+            // InternalSmallUML.g:759:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_1_0());
@@ -2077,24 +1787,24 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_21); 
+            otherlv_2=(Token)match(input,12,FOLLOW_22); 
 
             			newLeafNode(otherlv_2, grammarAccess.getRoleAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,31,FOLLOW_22); 
+            otherlv_3=(Token)match(input,28,FOLLOW_23); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRoleAccess().getUpperKeyword_3());
             		
-            // InternalSmallUML.g:917:3: ( (lv_upper_4_0= ruleEInt ) )
-            // InternalSmallUML.g:918:4: (lv_upper_4_0= ruleEInt )
+            // InternalSmallUML.g:784:3: ( (lv_upper_4_0= ruleEInt ) )
+            // InternalSmallUML.g:785:4: (lv_upper_4_0= ruleEInt )
             {
-            // InternalSmallUML.g:918:4: (lv_upper_4_0= ruleEInt )
-            // InternalSmallUML.g:919:5: lv_upper_4_0= ruleEInt
+            // InternalSmallUML.g:785:4: (lv_upper_4_0= ruleEInt )
+            // InternalSmallUML.g:786:5: lv_upper_4_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getRoleAccess().getUpperEIntParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_24);
             lv_upper_4_0=ruleEInt();
 
             state._fsp--;
@@ -2116,20 +1826,20 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_22); 
+            otherlv_5=(Token)match(input,29,FOLLOW_23); 
 
             			newLeafNode(otherlv_5, grammarAccess.getRoleAccess().getLowerKeyword_5());
             		
-            // InternalSmallUML.g:940:3: ( (lv_lower_6_0= ruleEInt ) )
-            // InternalSmallUML.g:941:4: (lv_lower_6_0= ruleEInt )
+            // InternalSmallUML.g:807:3: ( (lv_lower_6_0= ruleEInt ) )
+            // InternalSmallUML.g:808:4: (lv_lower_6_0= ruleEInt )
             {
-            // InternalSmallUML.g:941:4: (lv_lower_6_0= ruleEInt )
-            // InternalSmallUML.g:942:5: lv_lower_6_0= ruleEInt
+            // InternalSmallUML.g:808:4: (lv_lower_6_0= ruleEInt )
+            // InternalSmallUML.g:809:5: lv_lower_6_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getRoleAccess().getLowerEIntParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             lv_lower_6_0=ruleEInt();
 
             state._fsp--;
@@ -2151,256 +1861,33 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmallUML.g:959:3: (otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            otherlv_7=(Token)match(input,17,FOLLOW_10); 
 
-            if ( (LA21_0==21) ) {
-                alt21=1;
-            }
-            switch (alt21) {
-                case 1 :
-                    // InternalSmallUML.g:960:4: otherlv_7= 'method' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')'
-                    {
-                    otherlv_7=(Token)match(input,21,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_7, grammarAccess.getRoleAccess().getMethodKeyword_7_0());
-                    			
-                    otherlv_8=(Token)match(input,14,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getRoleAccess().getLeftParenthesisKeyword_7_1());
-                    			
-                    // InternalSmallUML.g:968:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:969:5: ( ruleEString )
-                    {
-                    // InternalSmallUML.g:969:5: ( ruleEString )
-                    // InternalSmallUML.g:970:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getRoleRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getRoleAccess().getMethodMethodCrossReference_7_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSmallUML.g:984:4: (otherlv_10= ',' ( ( ruleEString ) ) )*
-                    loop20:
-                    do {
-                        int alt20=2;
-                        int LA20_0 = input.LA(1);
-
-                        if ( (LA20_0==15) ) {
-                            alt20=1;
-                        }
-
-
-                        switch (alt20) {
-                    	case 1 :
-                    	    // InternalSmallUML.g:985:5: otherlv_10= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_10=(Token)match(input,15,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_10, grammarAccess.getRoleAccess().getCommaKeyword_7_3_0());
-                    	    				
-                    	    // InternalSmallUML.g:989:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:990:6: ( ruleEString )
-                    	    {
-                    	    // InternalSmallUML.g:990:6: ( ruleEString )
-                    	    // InternalSmallUML.g:991:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getRoleRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getRoleAccess().getMethodMethodCrossReference_7_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop20;
-                        }
-                    } while (true);
-
-                    otherlv_12=(Token)match(input,16,FOLLOW_25); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getRoleAccess().getRightParenthesisKeyword_7_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalSmallUML.g:1011:3: (otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==22) ) {
-                alt23=1;
-            }
-            switch (alt23) {
-                case 1 :
-                    // InternalSmallUML.g:1012:4: otherlv_13= 'attribute' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')'
-                    {
-                    otherlv_13=(Token)match(input,22,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_13, grammarAccess.getRoleAccess().getAttributeKeyword_8_0());
-                    			
-                    otherlv_14=(Token)match(input,14,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_14, grammarAccess.getRoleAccess().getLeftParenthesisKeyword_8_1());
-                    			
-                    // InternalSmallUML.g:1020:4: ( ( ruleEString ) )
-                    // InternalSmallUML.g:1021:5: ( ruleEString )
-                    {
-                    // InternalSmallUML.g:1021:5: ( ruleEString )
-                    // InternalSmallUML.g:1022:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getRoleRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getRoleAccess().getAttributeTypeCrossReference_8_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSmallUML.g:1036:4: (otherlv_16= ',' ( ( ruleEString ) ) )*
-                    loop22:
-                    do {
-                        int alt22=2;
-                        int LA22_0 = input.LA(1);
-
-                        if ( (LA22_0==15) ) {
-                            alt22=1;
-                        }
-
-
-                        switch (alt22) {
-                    	case 1 :
-                    	    // InternalSmallUML.g:1037:5: otherlv_16= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_16=(Token)match(input,15,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_16, grammarAccess.getRoleAccess().getCommaKeyword_8_3_0());
-                    	    				
-                    	    // InternalSmallUML.g:1041:5: ( ( ruleEString ) )
-                    	    // InternalSmallUML.g:1042:6: ( ruleEString )
-                    	    {
-                    	    // InternalSmallUML.g:1042:6: ( ruleEString )
-                    	    // InternalSmallUML.g:1043:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getRoleRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getRoleAccess().getAttributeTypeCrossReference_8_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop22;
-                        }
-                    } while (true);
-
-                    otherlv_18=(Token)match(input,16,FOLLOW_26); 
-
-                    				newLeafNode(otherlv_18, grammarAccess.getRoleAccess().getRightParenthesisKeyword_8_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_19=(Token)match(input,18,FOLLOW_6); 
-
-            			newLeafNode(otherlv_19, grammarAccess.getRoleAccess().getClassKeyword_9());
+            			newLeafNode(otherlv_7, grammarAccess.getRoleAccess().getClassKeyword_7());
             		
-            // InternalSmallUML.g:1067:3: ( ( ruleEString ) )
-            // InternalSmallUML.g:1068:4: ( ruleEString )
+            // InternalSmallUML.g:830:3: ( (lv_class_8_0= ruleClass ) )
+            // InternalSmallUML.g:831:4: (lv_class_8_0= ruleClass )
             {
-            // InternalSmallUML.g:1068:4: ( ruleEString )
-            // InternalSmallUML.g:1069:5: ruleEString
+            // InternalSmallUML.g:831:4: (lv_class_8_0= ruleClass )
+            // InternalSmallUML.g:832:5: lv_class_8_0= ruleClass
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getRoleRule());
-            					}
+            					newCompositeNode(grammarAccess.getRoleAccess().getClassClassParserRuleCall_8_0());
             				
-
-            					newCompositeNode(grammarAccess.getRoleAccess().getClassClassCrossReference_10_0());
-            				
-            pushFollow(FOLLOW_10);
-            ruleEString();
+            pushFollow(FOLLOW_11);
+            lv_class_8_0=ruleClass();
 
             state._fsp--;
 
 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRoleRule());
+            					}
+            					set(
+            						current,
+            						"class",
+            						lv_class_8_0,
+            						"org.smalluml.SmallUML.Class");
             					afterParserOrEnumRuleCall();
             				
 
@@ -2409,9 +1896,9 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_21=(Token)match(input,19,FOLLOW_2); 
+            otherlv_9=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_21, grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_11());
+            			newLeafNode(otherlv_9, grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_9());
             		
 
             }
@@ -2435,715 +1922,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleRole"
 
 
-    // $ANTLR start "entryRuleFloat"
-    // InternalSmallUML.g:1091:1: entryRuleFloat returns [EObject current=null] : iv_ruleFloat= ruleFloat EOF ;
-    public final EObject entryRuleFloat() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleFloat = null;
-
-
-        try {
-            // InternalSmallUML.g:1091:46: (iv_ruleFloat= ruleFloat EOF )
-            // InternalSmallUML.g:1092:2: iv_ruleFloat= ruleFloat EOF
-            {
-             newCompositeNode(grammarAccess.getFloatRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleFloat=ruleFloat();
-
-            state._fsp--;
-
-             current =iv_ruleFloat; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleFloat"
-
-
-    // $ANTLR start "ruleFloat"
-    // InternalSmallUML.g:1098:1: ruleFloat returns [EObject current=null] : (otherlv_0= 'Float' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEFloat ) ) otherlv_4= '}' ) ;
-    public final EObject ruleFloat() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_value_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSmallUML.g:1104:2: ( (otherlv_0= 'Float' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEFloat ) ) otherlv_4= '}' ) )
-            // InternalSmallUML.g:1105:2: (otherlv_0= 'Float' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEFloat ) ) otherlv_4= '}' )
-            {
-            // InternalSmallUML.g:1105:2: (otherlv_0= 'Float' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEFloat ) ) otherlv_4= '}' )
-            // InternalSmallUML.g:1106:3: otherlv_0= 'Float' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEFloat ) ) otherlv_4= '}'
-            {
-            otherlv_0=(Token)match(input,33,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getFloatAccess().getFloatKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_27); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getFloatAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,34,FOLLOW_28); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getFloatAccess().getValueKeyword_2());
-            		
-            // InternalSmallUML.g:1118:3: ( (lv_value_3_0= ruleEFloat ) )
-            // InternalSmallUML.g:1119:4: (lv_value_3_0= ruleEFloat )
-            {
-            // InternalSmallUML.g:1119:4: (lv_value_3_0= ruleEFloat )
-            // InternalSmallUML.g:1120:5: lv_value_3_0= ruleEFloat
-            {
-
-            					newCompositeNode(grammarAccess.getFloatAccess().getValueEFloatParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_10);
-            lv_value_3_0=ruleEFloat();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getFloatRule());
-            					}
-            					set(
-            						current,
-            						"value",
-            						lv_value_3_0,
-            						"org.smalluml.SmallUML.EFloat");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_4=(Token)match(input,19,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getFloatAccess().getRightCurlyBracketKeyword_4());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleFloat"
-
-
-    // $ANTLR start "entryRuleInt0"
-    // InternalSmallUML.g:1145:1: entryRuleInt0 returns [EObject current=null] : iv_ruleInt0= ruleInt0 EOF ;
-    public final EObject entryRuleInt0() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleInt0 = null;
-
-
-        try {
-            // InternalSmallUML.g:1145:45: (iv_ruleInt0= ruleInt0 EOF )
-            // InternalSmallUML.g:1146:2: iv_ruleInt0= ruleInt0 EOF
-            {
-             newCompositeNode(grammarAccess.getInt0Rule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleInt0=ruleInt0();
-
-            state._fsp--;
-
-             current =iv_ruleInt0; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleInt0"
-
-
-    // $ANTLR start "ruleInt0"
-    // InternalSmallUML.g:1152:1: ruleInt0 returns [EObject current=null] : (otherlv_0= 'Int' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEInt ) ) otherlv_4= '}' ) ;
-    public final EObject ruleInt0() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_value_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSmallUML.g:1158:2: ( (otherlv_0= 'Int' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEInt ) ) otherlv_4= '}' ) )
-            // InternalSmallUML.g:1159:2: (otherlv_0= 'Int' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEInt ) ) otherlv_4= '}' )
-            {
-            // InternalSmallUML.g:1159:2: (otherlv_0= 'Int' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEInt ) ) otherlv_4= '}' )
-            // InternalSmallUML.g:1160:3: otherlv_0= 'Int' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEInt ) ) otherlv_4= '}'
-            {
-            otherlv_0=(Token)match(input,35,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getInt0Access().getIntKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_27); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getInt0Access().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,34,FOLLOW_22); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getInt0Access().getValueKeyword_2());
-            		
-            // InternalSmallUML.g:1172:3: ( (lv_value_3_0= ruleEInt ) )
-            // InternalSmallUML.g:1173:4: (lv_value_3_0= ruleEInt )
-            {
-            // InternalSmallUML.g:1173:4: (lv_value_3_0= ruleEInt )
-            // InternalSmallUML.g:1174:5: lv_value_3_0= ruleEInt
-            {
-
-            					newCompositeNode(grammarAccess.getInt0Access().getValueEIntParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_10);
-            lv_value_3_0=ruleEInt();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getInt0Rule());
-            					}
-            					set(
-            						current,
-            						"value",
-            						lv_value_3_0,
-            						"org.smalluml.SmallUML.EInt");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_4=(Token)match(input,19,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getInt0Access().getRightCurlyBracketKeyword_4());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleInt0"
-
-
-    // $ANTLR start "entryRuleBoolean"
-    // InternalSmallUML.g:1199:1: entryRuleBoolean returns [EObject current=null] : iv_ruleBoolean= ruleBoolean EOF ;
-    public final EObject entryRuleBoolean() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleBoolean = null;
-
-
-        try {
-            // InternalSmallUML.g:1199:48: (iv_ruleBoolean= ruleBoolean EOF )
-            // InternalSmallUML.g:1200:2: iv_ruleBoolean= ruleBoolean EOF
-            {
-             newCompositeNode(grammarAccess.getBooleanRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleBoolean=ruleBoolean();
-
-            state._fsp--;
-
-             current =iv_ruleBoolean; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleBoolean"
-
-
-    // $ANTLR start "ruleBoolean"
-    // InternalSmallUML.g:1206:1: ruleBoolean returns [EObject current=null] : ( ( (lv_value_0_0= 'value' ) ) otherlv_1= 'Boolean' ) ;
-    public final EObject ruleBoolean() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_value_0_0=null;
-        Token otherlv_1=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSmallUML.g:1212:2: ( ( ( (lv_value_0_0= 'value' ) ) otherlv_1= 'Boolean' ) )
-            // InternalSmallUML.g:1213:2: ( ( (lv_value_0_0= 'value' ) ) otherlv_1= 'Boolean' )
-            {
-            // InternalSmallUML.g:1213:2: ( ( (lv_value_0_0= 'value' ) ) otherlv_1= 'Boolean' )
-            // InternalSmallUML.g:1214:3: ( (lv_value_0_0= 'value' ) ) otherlv_1= 'Boolean'
-            {
-            // InternalSmallUML.g:1214:3: ( (lv_value_0_0= 'value' ) )
-            // InternalSmallUML.g:1215:4: (lv_value_0_0= 'value' )
-            {
-            // InternalSmallUML.g:1215:4: (lv_value_0_0= 'value' )
-            // InternalSmallUML.g:1216:5: lv_value_0_0= 'value'
-            {
-            lv_value_0_0=(Token)match(input,34,FOLLOW_29); 
-
-            					newLeafNode(lv_value_0_0, grammarAccess.getBooleanAccess().getValueValueKeyword_0_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getBooleanRule());
-            					}
-            					setWithLastConsumed(current, "value", true, "value");
-            				
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,36,FOLLOW_2); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getBooleanAccess().getBooleanKeyword_1());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleBoolean"
-
-
-    // $ANTLR start "entryRuleString0"
-    // InternalSmallUML.g:1236:1: entryRuleString0 returns [EObject current=null] : iv_ruleString0= ruleString0 EOF ;
-    public final EObject entryRuleString0() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleString0 = null;
-
-
-        try {
-            // InternalSmallUML.g:1236:48: (iv_ruleString0= ruleString0 EOF )
-            // InternalSmallUML.g:1237:2: iv_ruleString0= ruleString0 EOF
-            {
-             newCompositeNode(grammarAccess.getString0Rule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleString0=ruleString0();
-
-            state._fsp--;
-
-             current =iv_ruleString0; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleString0"
-
-
-    // $ANTLR start "ruleString0"
-    // InternalSmallUML.g:1243:1: ruleString0 returns [EObject current=null] : (otherlv_0= 'String' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' ) ;
-    public final EObject ruleString0() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_value_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSmallUML.g:1249:2: ( (otherlv_0= 'String' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' ) )
-            // InternalSmallUML.g:1250:2: (otherlv_0= 'String' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' )
-            {
-            // InternalSmallUML.g:1250:2: (otherlv_0= 'String' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' )
-            // InternalSmallUML.g:1251:3: otherlv_0= 'String' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}'
-            {
-            otherlv_0=(Token)match(input,37,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getString0Access().getStringKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_27); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getString0Access().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,34,FOLLOW_6); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getString0Access().getValueKeyword_2());
-            		
-            // InternalSmallUML.g:1263:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalSmallUML.g:1264:4: (lv_value_3_0= ruleEString )
-            {
-            // InternalSmallUML.g:1264:4: (lv_value_3_0= ruleEString )
-            // InternalSmallUML.g:1265:5: lv_value_3_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getString0Access().getValueEStringParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_10);
-            lv_value_3_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getString0Rule());
-            					}
-            					set(
-            						current,
-            						"value",
-            						lv_value_3_0,
-            						"org.smalluml.SmallUML.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_4=(Token)match(input,19,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getString0Access().getRightCurlyBracketKeyword_4());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleString0"
-
-
-    // $ANTLR start "entryRuleEFloat"
-    // InternalSmallUML.g:1290:1: entryRuleEFloat returns [String current=null] : iv_ruleEFloat= ruleEFloat EOF ;
-    public final String entryRuleEFloat() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleEFloat = null;
-
-
-        try {
-            // InternalSmallUML.g:1290:46: (iv_ruleEFloat= ruleEFloat EOF )
-            // InternalSmallUML.g:1291:2: iv_ruleEFloat= ruleEFloat EOF
-            {
-             newCompositeNode(grammarAccess.getEFloatRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEFloat=ruleEFloat();
-
-            state._fsp--;
-
-             current =iv_ruleEFloat.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEFloat"
-
-
-    // $ANTLR start "ruleEFloat"
-    // InternalSmallUML.g:1297:1: ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? ) ;
-    public final AntlrDatatypeRuleToken ruleEFloat() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-        Token this_INT_1=null;
-        Token this_INT_3=null;
-        Token this_INT_7=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSmallUML.g:1303:2: ( ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? ) )
-            // InternalSmallUML.g:1304:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? )
-            {
-            // InternalSmallUML.g:1304:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? )
-            // InternalSmallUML.g:1305:3: (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )?
-            {
-            // InternalSmallUML.g:1305:3: (kw= '-' )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( (LA24_0==38) ) {
-                alt24=1;
-            }
-            switch (alt24) {
-                case 1 :
-                    // InternalSmallUML.g:1306:4: kw= '-'
-                    {
-                    kw=(Token)match(input,38,FOLLOW_30); 
-
-                    				current.merge(kw);
-                    				newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_0());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalSmallUML.g:1312:3: (this_INT_1= RULE_INT )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0==RULE_INT) ) {
-                alt25=1;
-            }
-            switch (alt25) {
-                case 1 :
-                    // InternalSmallUML.g:1313:4: this_INT_1= RULE_INT
-                    {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_31); 
-
-                    				current.merge(this_INT_1);
-                    			
-
-                    				newLeafNode(this_INT_1, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            kw=(Token)match(input,39,FOLLOW_32); 
-
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getEFloatAccess().getFullStopKeyword_2());
-            		
-            this_INT_3=(Token)match(input,RULE_INT,FOLLOW_33); 
-
-            			current.merge(this_INT_3);
-            		
-
-            			newLeafNode(this_INT_3, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3());
-            		
-            // InternalSmallUML.g:1333:3: ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
-
-            if ( ((LA28_0>=40 && LA28_0<=41)) ) {
-                alt28=1;
-            }
-            switch (alt28) {
-                case 1 :
-                    // InternalSmallUML.g:1334:4: (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT
-                    {
-                    // InternalSmallUML.g:1334:4: (kw= 'E' | kw= 'e' )
-                    int alt26=2;
-                    int LA26_0 = input.LA(1);
-
-                    if ( (LA26_0==40) ) {
-                        alt26=1;
-                    }
-                    else if ( (LA26_0==41) ) {
-                        alt26=2;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 26, 0, input);
-
-                        throw nvae;
-                    }
-                    switch (alt26) {
-                        case 1 :
-                            // InternalSmallUML.g:1335:5: kw= 'E'
-                            {
-                            kw=(Token)match(input,40,FOLLOW_22); 
-
-                            					current.merge(kw);
-                            					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_4_0_0());
-                            				
-
-                            }
-                            break;
-                        case 2 :
-                            // InternalSmallUML.g:1341:5: kw= 'e'
-                            {
-                            kw=(Token)match(input,41,FOLLOW_22); 
-
-                            					current.merge(kw);
-                            					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_4_0_1());
-                            				
-
-                            }
-                            break;
-
-                    }
-
-                    // InternalSmallUML.g:1347:4: (kw= '-' )?
-                    int alt27=2;
-                    int LA27_0 = input.LA(1);
-
-                    if ( (LA27_0==38) ) {
-                        alt27=1;
-                    }
-                    switch (alt27) {
-                        case 1 :
-                            // InternalSmallUML.g:1348:5: kw= '-'
-                            {
-                            kw=(Token)match(input,38,FOLLOW_32); 
-
-                            					current.merge(kw);
-                            					newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_4_1());
-                            				
-
-                            }
-                            break;
-
-                    }
-
-                    this_INT_7=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-                    				current.merge(this_INT_7);
-                    			
-
-                    				newLeafNode(this_INT_7, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_4_2());
-                    			
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEFloat"
-
-
     // $ANTLR start "entryRuleEInt"
-    // InternalSmallUML.g:1366:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalSmallUML.g:857:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -3151,8 +1931,8 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmallUML.g:1366:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalSmallUML.g:1367:2: iv_ruleEInt= ruleEInt EOF
+            // InternalSmallUML.g:857:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalSmallUML.g:858:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -3179,7 +1959,7 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalSmallUML.g:1373:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalSmallUML.g:864:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3190,24 +1970,24 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmallUML.g:1379:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalSmallUML.g:1380:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalSmallUML.g:870:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalSmallUML.g:871:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalSmallUML.g:1380:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalSmallUML.g:1381:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalSmallUML.g:871:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalSmallUML.g:872:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalSmallUML.g:1381:3: (kw= '-' )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalSmallUML.g:872:3: (kw= '-' )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA29_0==38) ) {
-                alt29=1;
+            if ( (LA13_0==30) ) {
+                alt13=1;
             }
-            switch (alt29) {
+            switch (alt13) {
                 case 1 :
-                    // InternalSmallUML.g:1382:4: kw= '-'
+                    // InternalSmallUML.g:873:4: kw= '-'
                     {
-                    kw=(Token)match(input,38,FOLLOW_32); 
+                    kw=(Token)match(input,30,FOLLOW_26); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
@@ -3246,6 +2026,936 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleEInt"
 
+
+    // $ANTLR start "entryRuleMethod"
+    // InternalSmallUML.g:890:1: entryRuleMethod returns [EObject current=null] : iv_ruleMethod= ruleMethod EOF ;
+    public final EObject entryRuleMethod() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMethod = null;
+
+
+        try {
+            // InternalSmallUML.g:890:47: (iv_ruleMethod= ruleMethod EOF )
+            // InternalSmallUML.g:891:2: iv_ruleMethod= ruleMethod EOF
+            {
+             newCompositeNode(grammarAccess.getMethodRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMethod=ruleMethod();
+
+            state._fsp--;
+
+             current =iv_ruleMethod; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMethod"
+
+
+    // $ANTLR start "ruleMethod"
+    // InternalSmallUML.g:897:1: ruleMethod returns [EObject current=null] : ( () otherlv_1= 'Method' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}' )? (otherlv_10= 'return' ( (lv_return_11_0= ruleType ) ) )? otherlv_12= '}' ) ;
+    public final EObject ruleMethod() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+        EObject lv_parameters_6_0 = null;
+
+        EObject lv_parameters_8_0 = null;
+
+        EObject lv_return_11_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:903:2: ( ( () otherlv_1= 'Method' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}' )? (otherlv_10= 'return' ( (lv_return_11_0= ruleType ) ) )? otherlv_12= '}' ) )
+            // InternalSmallUML.g:904:2: ( () otherlv_1= 'Method' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}' )? (otherlv_10= 'return' ( (lv_return_11_0= ruleType ) ) )? otherlv_12= '}' )
+            {
+            // InternalSmallUML.g:904:2: ( () otherlv_1= 'Method' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}' )? (otherlv_10= 'return' ( (lv_return_11_0= ruleType ) ) )? otherlv_12= '}' )
+            // InternalSmallUML.g:905:3: () otherlv_1= 'Method' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}' )? (otherlv_10= 'return' ( (lv_return_11_0= ruleType ) ) )? otherlv_12= '}'
+            {
+            // InternalSmallUML.g:905:3: ()
+            // InternalSmallUML.g:906:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMethodAccess().getMethodAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,31,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMethodAccess().getMethodKeyword_1());
+            		
+            // InternalSmallUML.g:916:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:917:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalSmallUML.g:917:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:918:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getMethodAccess().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_3);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMethodRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.smalluml.SmallUML.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,12,FOLLOW_27); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getMethodAccess().getLeftCurlyBracketKeyword_3());
+            		
+            // InternalSmallUML.g:939:3: (otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}' )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==32) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalSmallUML.g:940:4: otherlv_4= 'parameters' otherlv_5= '{' ( (lv_parameters_6_0= ruleType ) ) (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )* otherlv_9= '}'
+                    {
+                    otherlv_4=(Token)match(input,32,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getMethodAccess().getParametersKeyword_4_0());
+                    			
+                    otherlv_5=(Token)match(input,12,FOLLOW_21); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getMethodAccess().getLeftCurlyBracketKeyword_4_1());
+                    			
+                    // InternalSmallUML.g:948:4: ( (lv_parameters_6_0= ruleType ) )
+                    // InternalSmallUML.g:949:5: (lv_parameters_6_0= ruleType )
+                    {
+                    // InternalSmallUML.g:949:5: (lv_parameters_6_0= ruleType )
+                    // InternalSmallUML.g:950:6: lv_parameters_6_0= ruleType
+                    {
+
+                    						newCompositeNode(grammarAccess.getMethodAccess().getParametersTypeParserRuleCall_4_2_0());
+                    					
+                    pushFollow(FOLLOW_6);
+                    lv_parameters_6_0=ruleType();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getMethodRule());
+                    						}
+                    						add(
+                    							current,
+                    							"parameters",
+                    							lv_parameters_6_0,
+                    							"org.smalluml.SmallUML.Type");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalSmallUML.g:967:4: (otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) ) )*
+                    loop14:
+                    do {
+                        int alt14=2;
+                        int LA14_0 = input.LA(1);
+
+                        if ( (LA14_0==14) ) {
+                            alt14=1;
+                        }
+
+
+                        switch (alt14) {
+                    	case 1 :
+                    	    // InternalSmallUML.g:968:5: otherlv_7= ',' ( (lv_parameters_8_0= ruleType ) )
+                    	    {
+                    	    otherlv_7=(Token)match(input,14,FOLLOW_21); 
+
+                    	    					newLeafNode(otherlv_7, grammarAccess.getMethodAccess().getCommaKeyword_4_3_0());
+                    	    				
+                    	    // InternalSmallUML.g:972:5: ( (lv_parameters_8_0= ruleType ) )
+                    	    // InternalSmallUML.g:973:6: (lv_parameters_8_0= ruleType )
+                    	    {
+                    	    // InternalSmallUML.g:973:6: (lv_parameters_8_0= ruleType )
+                    	    // InternalSmallUML.g:974:7: lv_parameters_8_0= ruleType
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getMethodAccess().getParametersTypeParserRuleCall_4_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_parameters_8_0=ruleType();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getMethodRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"parameters",
+                    	    								lv_parameters_8_0,
+                    	    								"org.smalluml.SmallUML.Type");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop14;
+                        }
+                    } while (true);
+
+                    otherlv_9=(Token)match(input,15,FOLLOW_28); 
+
+                    				newLeafNode(otherlv_9, grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_4_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalSmallUML.g:997:3: (otherlv_10= 'return' ( (lv_return_11_0= ruleType ) ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==33) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalSmallUML.g:998:4: otherlv_10= 'return' ( (lv_return_11_0= ruleType ) )
+                    {
+                    otherlv_10=(Token)match(input,33,FOLLOW_21); 
+
+                    				newLeafNode(otherlv_10, grammarAccess.getMethodAccess().getReturnKeyword_5_0());
+                    			
+                    // InternalSmallUML.g:1002:4: ( (lv_return_11_0= ruleType ) )
+                    // InternalSmallUML.g:1003:5: (lv_return_11_0= ruleType )
+                    {
+                    // InternalSmallUML.g:1003:5: (lv_return_11_0= ruleType )
+                    // InternalSmallUML.g:1004:6: lv_return_11_0= ruleType
+                    {
+
+                    						newCompositeNode(grammarAccess.getMethodAccess().getReturnTypeParserRuleCall_5_1_0());
+                    					
+                    pushFollow(FOLLOW_11);
+                    lv_return_11_0=ruleType();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getMethodRule());
+                    						}
+                    						set(
+                    							current,
+                    							"return",
+                    							lv_return_11_0,
+                    							"org.smalluml.SmallUML.Type");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_12=(Token)match(input,15,FOLLOW_2); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_6());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMethod"
+
+
+    // $ANTLR start "entryRuleType_Impl"
+    // InternalSmallUML.g:1030:1: entryRuleType_Impl returns [EObject current=null] : iv_ruleType_Impl= ruleType_Impl EOF ;
+    public final EObject entryRuleType_Impl() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleType_Impl = null;
+
+
+        try {
+            // InternalSmallUML.g:1030:50: (iv_ruleType_Impl= ruleType_Impl EOF )
+            // InternalSmallUML.g:1031:2: iv_ruleType_Impl= ruleType_Impl EOF
+            {
+             newCompositeNode(grammarAccess.getType_ImplRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleType_Impl=ruleType_Impl();
+
+            state._fsp--;
+
+             current =iv_ruleType_Impl; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleType_Impl"
+
+
+    // $ANTLR start "ruleType_Impl"
+    // InternalSmallUML.g:1037:1: ruleType_Impl returns [EObject current=null] : ( () otherlv_1= 'Type' ( (lv_name_2_0= ruleEString ) ) ) ;
+    public final EObject ruleType_Impl() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:1043:2: ( ( () otherlv_1= 'Type' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalSmallUML.g:1044:2: ( () otherlv_1= 'Type' ( (lv_name_2_0= ruleEString ) ) )
+            {
+            // InternalSmallUML.g:1044:2: ( () otherlv_1= 'Type' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalSmallUML.g:1045:3: () otherlv_1= 'Type' ( (lv_name_2_0= ruleEString ) )
+            {
+            // InternalSmallUML.g:1045:3: ()
+            // InternalSmallUML.g:1046:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getType_ImplAccess().getTypeAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,34,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getType_ImplAccess().getTypeKeyword_1());
+            		
+            // InternalSmallUML.g:1056:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:1057:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalSmallUML.g:1057:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:1058:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getType_ImplAccess().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getType_ImplRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.smalluml.SmallUML.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleType_Impl"
+
+
+    // $ANTLR start "entryRuleFloat"
+    // InternalSmallUML.g:1079:1: entryRuleFloat returns [EObject current=null] : iv_ruleFloat= ruleFloat EOF ;
+    public final EObject entryRuleFloat() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleFloat = null;
+
+
+        try {
+            // InternalSmallUML.g:1079:46: (iv_ruleFloat= ruleFloat EOF )
+            // InternalSmallUML.g:1080:2: iv_ruleFloat= ruleFloat EOF
+            {
+             newCompositeNode(grammarAccess.getFloatRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleFloat=ruleFloat();
+
+            state._fsp--;
+
+             current =iv_ruleFloat; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleFloat"
+
+
+    // $ANTLR start "ruleFloat"
+    // InternalSmallUML.g:1086:1: ruleFloat returns [EObject current=null] : ( () otherlv_1= 'Float' ( (lv_name_2_0= ruleEString ) ) ) ;
+    public final EObject ruleFloat() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:1092:2: ( ( () otherlv_1= 'Float' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalSmallUML.g:1093:2: ( () otherlv_1= 'Float' ( (lv_name_2_0= ruleEString ) ) )
+            {
+            // InternalSmallUML.g:1093:2: ( () otherlv_1= 'Float' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalSmallUML.g:1094:3: () otherlv_1= 'Float' ( (lv_name_2_0= ruleEString ) )
+            {
+            // InternalSmallUML.g:1094:3: ()
+            // InternalSmallUML.g:1095:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getFloatAccess().getFloatAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,35,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getFloatAccess().getFloatKeyword_1());
+            		
+            // InternalSmallUML.g:1105:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:1106:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalSmallUML.g:1106:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:1107:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getFloatAccess().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getFloatRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.smalluml.SmallUML.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleFloat"
+
+
+    // $ANTLR start "entryRuleInt0"
+    // InternalSmallUML.g:1128:1: entryRuleInt0 returns [EObject current=null] : iv_ruleInt0= ruleInt0 EOF ;
+    public final EObject entryRuleInt0() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleInt0 = null;
+
+
+        try {
+            // InternalSmallUML.g:1128:45: (iv_ruleInt0= ruleInt0 EOF )
+            // InternalSmallUML.g:1129:2: iv_ruleInt0= ruleInt0 EOF
+            {
+             newCompositeNode(grammarAccess.getInt0Rule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleInt0=ruleInt0();
+
+            state._fsp--;
+
+             current =iv_ruleInt0; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleInt0"
+
+
+    // $ANTLR start "ruleInt0"
+    // InternalSmallUML.g:1135:1: ruleInt0 returns [EObject current=null] : ( () otherlv_1= 'Int' ( (lv_name_2_0= ruleEString ) ) ) ;
+    public final EObject ruleInt0() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:1141:2: ( ( () otherlv_1= 'Int' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalSmallUML.g:1142:2: ( () otherlv_1= 'Int' ( (lv_name_2_0= ruleEString ) ) )
+            {
+            // InternalSmallUML.g:1142:2: ( () otherlv_1= 'Int' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalSmallUML.g:1143:3: () otherlv_1= 'Int' ( (lv_name_2_0= ruleEString ) )
+            {
+            // InternalSmallUML.g:1143:3: ()
+            // InternalSmallUML.g:1144:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getInt0Access().getIntAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,36,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getInt0Access().getIntKeyword_1());
+            		
+            // InternalSmallUML.g:1154:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:1155:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalSmallUML.g:1155:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:1156:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getInt0Access().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getInt0Rule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.smalluml.SmallUML.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleInt0"
+
+
+    // $ANTLR start "entryRuleBoolean"
+    // InternalSmallUML.g:1177:1: entryRuleBoolean returns [EObject current=null] : iv_ruleBoolean= ruleBoolean EOF ;
+    public final EObject entryRuleBoolean() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleBoolean = null;
+
+
+        try {
+            // InternalSmallUML.g:1177:48: (iv_ruleBoolean= ruleBoolean EOF )
+            // InternalSmallUML.g:1178:2: iv_ruleBoolean= ruleBoolean EOF
+            {
+             newCompositeNode(grammarAccess.getBooleanRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleBoolean=ruleBoolean();
+
+            state._fsp--;
+
+             current =iv_ruleBoolean; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleBoolean"
+
+
+    // $ANTLR start "ruleBoolean"
+    // InternalSmallUML.g:1184:1: ruleBoolean returns [EObject current=null] : ( () otherlv_1= 'Boolean' ( (lv_name_2_0= ruleEString ) ) ) ;
+    public final EObject ruleBoolean() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:1190:2: ( ( () otherlv_1= 'Boolean' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalSmallUML.g:1191:2: ( () otherlv_1= 'Boolean' ( (lv_name_2_0= ruleEString ) ) )
+            {
+            // InternalSmallUML.g:1191:2: ( () otherlv_1= 'Boolean' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalSmallUML.g:1192:3: () otherlv_1= 'Boolean' ( (lv_name_2_0= ruleEString ) )
+            {
+            // InternalSmallUML.g:1192:3: ()
+            // InternalSmallUML.g:1193:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getBooleanAccess().getBooleanAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,37,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getBooleanAccess().getBooleanKeyword_1());
+            		
+            // InternalSmallUML.g:1203:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:1204:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalSmallUML.g:1204:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:1205:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getBooleanAccess().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getBooleanRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.smalluml.SmallUML.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleBoolean"
+
+
+    // $ANTLR start "entryRuleString0"
+    // InternalSmallUML.g:1226:1: entryRuleString0 returns [EObject current=null] : iv_ruleString0= ruleString0 EOF ;
+    public final EObject entryRuleString0() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleString0 = null;
+
+
+        try {
+            // InternalSmallUML.g:1226:48: (iv_ruleString0= ruleString0 EOF )
+            // InternalSmallUML.g:1227:2: iv_ruleString0= ruleString0 EOF
+            {
+             newCompositeNode(grammarAccess.getString0Rule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleString0=ruleString0();
+
+            state._fsp--;
+
+             current =iv_ruleString0; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleString0"
+
+
+    // $ANTLR start "ruleString0"
+    // InternalSmallUML.g:1233:1: ruleString0 returns [EObject current=null] : ( () otherlv_1= 'String' ( (lv_name_2_0= ruleEString ) ) ) ;
+    public final EObject ruleString0() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSmallUML.g:1239:2: ( ( () otherlv_1= 'String' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalSmallUML.g:1240:2: ( () otherlv_1= 'String' ( (lv_name_2_0= ruleEString ) ) )
+            {
+            // InternalSmallUML.g:1240:2: ( () otherlv_1= 'String' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalSmallUML.g:1241:3: () otherlv_1= 'String' ( (lv_name_2_0= ruleEString ) )
+            {
+            // InternalSmallUML.g:1241:3: ()
+            // InternalSmallUML.g:1242:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getString0Access().getStringAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,38,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getString0Access().getStringKeyword_1());
+            		
+            // InternalSmallUML.g:1252:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSmallUML.g:1253:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalSmallUML.g:1253:4: (lv_name_2_0= ruleEString )
+            // InternalSmallUML.g:1254:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getString0Access().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getString0Rule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.smalluml.SmallUML.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleString0"
+
     // Delegated rules
 
 
@@ -3254,35 +2964,30 @@ public class InternalSmallUMLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000000000E2000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000E0000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000E00000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000004600000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004400000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000680000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000480000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000004000000040L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000640000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000440000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x000000C000000040L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000008000000040L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000003A000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000000C000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000038000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000028000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000006008000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004008000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000007C00000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000300008000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000200008000L});
 
 }

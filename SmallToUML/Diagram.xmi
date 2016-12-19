@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smalluml:Diagram
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:smalluml="http://www.univ-nantes.fr/smalluml"
+    xsi:schemaLocation="http://www.univ-nantes.fr/smalluml ../SmallUML/model/smalluml.ecore">
+  <assoc>
+    <used name="Conduit"
+        upper="1"
+        lower="1">
+      <class
+          name="Conducteur">
+        <method
+            name="Conduire">
+          <parameters
+              xsi:type="smalluml:String"
+              name="Position"/>
+          <return
+              xsi:type="smalluml:String"
+              name="Destination"/>
+        </method>
+        <attribute
+            xsi:type="smalluml:String"
+            name="Name"/>
+      </class>
+    </used>
+    <user name="estConduit"
+        upper="1"
+        lower="1">
+      <class
+          name="Scooter">
+        <method
+            name="Conduit">
+          <parameters
+              xsi:type="smalluml:Int"
+              name="essence"/>
+          <return
+              xsi:type="smalluml:Int"
+              name="essenceDepensée"/>
+        </method>
+        <attribute
+            xsi:type="smalluml:String"
+            name="Marque"/>
+      </class>
+    </user>
+  </assoc>
+</smalluml:Diagram>

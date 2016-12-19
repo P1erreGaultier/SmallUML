@@ -4,14 +4,16 @@ package smalluml.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import smalluml.Association;
 import smalluml.Diagram;
 import smalluml.Heritage;
@@ -34,7 +36,7 @@ import smalluml.SmallumlPackage;
  */
 public class DiagramImpl extends MinimalEObjectImpl.Container implements Diagram {
 	/**
-	 * The cached value of the '{@link #getAssoc() <em>Assoc</em>}' reference list.
+	 * The cached value of the '{@link #getAssoc() <em>Assoc</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssoc()
@@ -44,7 +46,7 @@ public class DiagramImpl extends MinimalEObjectImpl.Container implements Diagram
 	protected EList<Association> assoc;
 
 	/**
-	 * The cached value of the '{@link #getHeritage() <em>Heritage</em>}' reference list.
+	 * The cached value of the '{@link #getHeritage() <em>Heritage</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHeritage()
@@ -54,7 +56,7 @@ public class DiagramImpl extends MinimalEObjectImpl.Container implements Diagram
 	protected EList<Heritage> heritage;
 
 	/**
-	 * The cached value of the '{@link #getClass_() <em>Class</em>}' reference list.
+	 * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getClass_()
@@ -89,7 +91,7 @@ public class DiagramImpl extends MinimalEObjectImpl.Container implements Diagram
 	 */
 	public EList<Association> getAssoc() {
 		if (assoc == null) {
-			assoc = new EObjectResolvingEList<Association>(Association.class, this, SmallumlPackage.DIAGRAM__ASSOC);
+			assoc = new EObjectContainmentEList<Association>(Association.class, this, SmallumlPackage.DIAGRAM__ASSOC);
 		}
 		return assoc;
 	}
@@ -101,7 +103,7 @@ public class DiagramImpl extends MinimalEObjectImpl.Container implements Diagram
 	 */
 	public EList<Heritage> getHeritage() {
 		if (heritage == null) {
-			heritage = new EObjectResolvingEList<Heritage>(Heritage.class, this, SmallumlPackage.DIAGRAM__HERITAGE);
+			heritage = new EObjectContainmentEList<Heritage>(Heritage.class, this, SmallumlPackage.DIAGRAM__HERITAGE);
 		}
 		return heritage;
 	}
@@ -113,9 +115,27 @@ public class DiagramImpl extends MinimalEObjectImpl.Container implements Diagram
 	 */
 	public EList<smalluml.Class> getClass_() {
 		if (class_ == null) {
-			class_ = new EObjectResolvingEList<smalluml.Class>(smalluml.Class.class, this, SmallumlPackage.DIAGRAM__CLASS);
+			class_ = new EObjectContainmentEList<smalluml.Class>(smalluml.Class.class, this, SmallumlPackage.DIAGRAM__CLASS);
 		}
 		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SmallumlPackage.DIAGRAM__ASSOC:
+				return ((InternalEList<?>)getAssoc()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.DIAGRAM__HERITAGE:
+				return ((InternalEList<?>)getHeritage()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.DIAGRAM__CLASS:
+				return ((InternalEList<?>)getClass_()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

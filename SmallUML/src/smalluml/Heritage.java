@@ -19,54 +19,54 @@ package smalluml;
  * @model
  * @generated
  */
-public interface Heritage extends smalluml.Class {
+public interface Heritage extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Mother</b></em>' reference.
+	 * Returns the value of the '<em><b>Mother</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mother</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mother</em>' reference.
+	 * @return the value of the '<em>Mother</em>' containment reference.
 	 * @see #setMother(Role)
 	 * @see smalluml.SmallumlPackage#getHeritage_Mother()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Role getMother();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Heritage#getMother <em>Mother</em>}' reference.
+	 * Sets the value of the '{@link smalluml.Heritage#getMother <em>Mother</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mother</em>' reference.
+	 * @param value the new value of the '<em>Mother</em>' containment reference.
 	 * @see #getMother()
 	 * @generated
 	 */
 	void setMother(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Child</b></em>' reference.
+	 * Returns the value of the '<em><b>Child</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Child</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child</em>' reference.
+	 * @return the value of the '<em>Child</em>' containment reference.
 	 * @see #setChild(Role)
 	 * @see smalluml.SmallumlPackage#getHeritage_Child()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Role getChild();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Heritage#getChild <em>Child</em>}' reference.
+	 * Sets the value of the '{@link smalluml.Heritage#getChild <em>Child</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Child</em>' reference.
+	 * @param value the new value of the '<em>Child</em>' containment reference.
 	 * @see #getChild()
 	 * @generated
 	 */

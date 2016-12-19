@@ -114,7 +114,7 @@ public interface SmallumlPackage extends EPackage {
 	int CLASS__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Method</b></em>' reference list.
+	 * The feature id for the '<em><b>Method</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface SmallumlPackage extends EPackage {
 	int CLASS__METHOD = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -170,7 +170,7 @@ public interface SmallumlPackage extends EPackage {
 	int METHOD__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -179,7 +179,7 @@ public interface SmallumlPackage extends EPackage {
 	int METHOD__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Return</b></em>' reference.
+	 * The feature id for the '<em><b>Return</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -222,43 +222,25 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__NAME = CLASS__NAME;
+	int ASSOCIATION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Method</b></em>' reference list.
+	 * The feature id for the '<em><b>Used</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__METHOD = CLASS__METHOD;
+	int ASSOCIATION__USED = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>User</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__ATTRIBUTE = CLASS__ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Used</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__USED = CLASS_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>User</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__USER = CLASS_FEATURE_COUNT + 1;
+	int ASSOCIATION__USER = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Association</em>' class.
@@ -267,7 +249,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_FEATURE_COUNT = CLASS_FEATURE_COUNT + 2;
+	int ASSOCIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Association</em>' class.
@@ -276,7 +258,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_OPERATION_COUNT = CLASS_OPERATION_COUNT + 0;
+	int ASSOCIATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link smalluml.impl.HeritageImpl <em>Heritage</em>}' class.
@@ -295,43 +277,25 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HERITAGE__NAME = CLASS__NAME;
+	int HERITAGE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Method</b></em>' reference list.
+	 * The feature id for the '<em><b>Mother</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HERITAGE__METHOD = CLASS__METHOD;
+	int HERITAGE__MOTHER = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Child</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HERITAGE__ATTRIBUTE = CLASS__ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Mother</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HERITAGE__MOTHER = CLASS_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Child</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HERITAGE__CHILD = CLASS_FEATURE_COUNT + 1;
+	int HERITAGE__CHILD = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Heritage</em>' class.
@@ -340,7 +304,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HERITAGE_FEATURE_COUNT = CLASS_FEATURE_COUNT + 2;
+	int HERITAGE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Heritage</em>' class.
@@ -349,7 +313,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HERITAGE_OPERATION_COUNT = CLASS_OPERATION_COUNT + 0;
+	int HERITAGE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link smalluml.impl.RoleImpl <em>Role</em>}' class.
@@ -368,34 +332,16 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME = CLASS__NAME;
+	int ROLE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Method</b></em>' reference list.
+	 * The feature id for the '<em><b>Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__METHOD = CLASS__METHOD;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ATTRIBUTE = CLASS__ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__CLASS = CLASS_FEATURE_COUNT + 0;
+	int ROLE__CLASS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Upper</b></em>' attribute.
@@ -404,7 +350,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__UPPER = CLASS_FEATURE_COUNT + 1;
+	int ROLE__UPPER = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Lower</b></em>' attribute.
@@ -413,7 +359,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__LOWER = CLASS_FEATURE_COUNT + 2;
+	int ROLE__LOWER = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -422,7 +368,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = CLASS_FEATURE_COUNT + 3;
+	int ROLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -431,7 +377,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_OPERATION_COUNT = CLASS_OPERATION_COUNT + 0;
+	int ROLE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link smalluml.impl.TypeImpl <em>Type</em>}' class.
@@ -444,13 +390,22 @@ public interface SmallumlPackage extends EPackage {
 	int TYPE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = 0;
+	int TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -459,7 +414,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_OPERATION_COUNT = 0;
+	int TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link smalluml.impl.FloatImpl <em>Float</em>}' class.
@@ -472,13 +427,13 @@ public interface SmallumlPackage extends EPackage {
 	int FLOAT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOAT__VALUE = TYPE_FEATURE_COUNT + 0;
+	int FLOAT__NAME = TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Float</em>' class.
@@ -487,7 +442,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOAT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+	int FLOAT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Float</em>' class.
@@ -509,13 +464,13 @@ public interface SmallumlPackage extends EPackage {
 	int INT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INT__VALUE = TYPE_FEATURE_COUNT + 0;
+	int INT__NAME = TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Int</em>' class.
@@ -524,7 +479,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+	int INT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Int</em>' class.
@@ -546,13 +501,13 @@ public interface SmallumlPackage extends EPackage {
 	int BOOLEAN = 8;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN__VALUE = TYPE_FEATURE_COUNT + 0;
+	int BOOLEAN__NAME = TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Boolean</em>' class.
@@ -561,7 +516,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+	int BOOLEAN_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Boolean</em>' class.
@@ -583,13 +538,13 @@ public interface SmallumlPackage extends EPackage {
 	int STRING = 9;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRING__VALUE = TYPE_FEATURE_COUNT + 0;
+	int STRING__NAME = TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>String</em>' class.
@@ -598,7 +553,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+	int STRING_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>String</em>' class.
@@ -621,7 +576,7 @@ public interface SmallumlPackage extends EPackage {
 	int DIAGRAM = 11;
 
 	/**
-	 * The feature id for the '<em><b>Assoc</b></em>' reference list.
+	 * The feature id for the '<em><b>Assoc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -630,7 +585,7 @@ public interface SmallumlPackage extends EPackage {
 	int DIAGRAM__ASSOC = 0;
 
 	/**
-	 * The feature id for the '<em><b>Heritage</b></em>' reference list.
+	 * The feature id for the '<em><b>Heritage</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -639,7 +594,7 @@ public interface SmallumlPackage extends EPackage {
 	int DIAGRAM__HERITAGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' reference list.
+	 * The feature id for the '<em><b>Class</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -677,10 +632,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getClass_();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smalluml.Class#getMethod <em>Method</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smalluml.Class#getMethod <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Method</em>'.
+	 * @return the meta object for the containment reference list '<em>Method</em>'.
 	 * @see smalluml.Class#getMethod()
 	 * @see #getClass_()
 	 * @generated
@@ -688,10 +643,10 @@ public interface SmallumlPackage extends EPackage {
 	EReference getClass_Method();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smalluml.Class#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smalluml.Class#getAttribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attribute</em>'.
+	 * @return the meta object for the containment reference list '<em>Attribute</em>'.
 	 * @see smalluml.Class#getAttribute()
 	 * @see #getClass_()
 	 * @generated
@@ -709,10 +664,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getMethod();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smalluml.Method#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smalluml.Method#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
 	 * @see smalluml.Method#getParameters()
 	 * @see #getMethod()
 	 * @generated
@@ -720,10 +675,10 @@ public interface SmallumlPackage extends EPackage {
 	EReference getMethod_Parameters();
 
 	/**
-	 * Returns the meta object for the reference '{@link smalluml.Method#getReturn <em>Return</em>}'.
+	 * Returns the meta object for the containment reference '{@link smalluml.Method#getReturn <em>Return</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Return</em>'.
+	 * @return the meta object for the containment reference '<em>Return</em>'.
 	 * @see smalluml.Method#getReturn()
 	 * @see #getMethod()
 	 * @generated
@@ -741,10 +696,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getAssociation();
 
 	/**
-	 * Returns the meta object for the reference '{@link smalluml.Association#getUsed <em>Used</em>}'.
+	 * Returns the meta object for the containment reference '{@link smalluml.Association#getUsed <em>Used</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Used</em>'.
+	 * @return the meta object for the containment reference '<em>Used</em>'.
 	 * @see smalluml.Association#getUsed()
 	 * @see #getAssociation()
 	 * @generated
@@ -752,10 +707,10 @@ public interface SmallumlPackage extends EPackage {
 	EReference getAssociation_Used();
 
 	/**
-	 * Returns the meta object for the reference '{@link smalluml.Association#getUser <em>User</em>}'.
+	 * Returns the meta object for the containment reference '{@link smalluml.Association#getUser <em>User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User</em>'.
+	 * @return the meta object for the containment reference '<em>User</em>'.
 	 * @see smalluml.Association#getUser()
 	 * @see #getAssociation()
 	 * @generated
@@ -773,10 +728,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getHeritage();
 
 	/**
-	 * Returns the meta object for the reference '{@link smalluml.Heritage#getMother <em>Mother</em>}'.
+	 * Returns the meta object for the containment reference '{@link smalluml.Heritage#getMother <em>Mother</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mother</em>'.
+	 * @return the meta object for the containment reference '<em>Mother</em>'.
 	 * @see smalluml.Heritage#getMother()
 	 * @see #getHeritage()
 	 * @generated
@@ -784,10 +739,10 @@ public interface SmallumlPackage extends EPackage {
 	EReference getHeritage_Mother();
 
 	/**
-	 * Returns the meta object for the reference '{@link smalluml.Heritage#getChild <em>Child</em>}'.
+	 * Returns the meta object for the containment reference '{@link smalluml.Heritage#getChild <em>Child</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Child</em>'.
+	 * @return the meta object for the containment reference '<em>Child</em>'.
 	 * @see smalluml.Heritage#getChild()
 	 * @see #getHeritage()
 	 * @generated
@@ -805,10 +760,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getRole();
 
 	/**
-	 * Returns the meta object for the reference '{@link smalluml.Role#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the containment reference '{@link smalluml.Role#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Class</em>'.
+	 * @return the meta object for the containment reference '<em>Class</em>'.
 	 * @see smalluml.Role#getClass_()
 	 * @see #getRole()
 	 * @generated
@@ -858,17 +813,6 @@ public interface SmallumlPackage extends EPackage {
 	EClass getFloat();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smalluml.Float#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see smalluml.Float#getValue()
-	 * @see #getFloat()
-	 * @generated
-	 */
-	EAttribute getFloat_Value();
-
-	/**
 	 * Returns the meta object for class '{@link smalluml.Int <em>Int</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -877,17 +821,6 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInt();
-
-	/**
-	 * Returns the meta object for the attribute '{@link smalluml.Int#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see smalluml.Int#getValue()
-	 * @see #getInt()
-	 * @generated
-	 */
-	EAttribute getInt_Value();
 
 	/**
 	 * Returns the meta object for class '{@link smalluml.Boolean <em>Boolean</em>}'.
@@ -900,17 +833,6 @@ public interface SmallumlPackage extends EPackage {
 	EClass getBoolean();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smalluml.Boolean#isValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see smalluml.Boolean#isValue()
-	 * @see #getBoolean()
-	 * @generated
-	 */
-	EAttribute getBoolean_Value();
-
-	/**
 	 * Returns the meta object for class '{@link smalluml.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -919,17 +841,6 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getString();
-
-	/**
-	 * Returns the meta object for the attribute '{@link smalluml.String#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see smalluml.String#getValue()
-	 * @see #getString()
-	 * @generated
-	 */
-	EAttribute getString_Value();
 
 	/**
 	 * Returns the meta object for class '{@link smalluml.NamedElement <em>Named Element</em>}'.
@@ -963,10 +874,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getDiagram();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smalluml.Diagram#getAssoc <em>Assoc</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smalluml.Diagram#getAssoc <em>Assoc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Assoc</em>'.
+	 * @return the meta object for the containment reference list '<em>Assoc</em>'.
 	 * @see smalluml.Diagram#getAssoc()
 	 * @see #getDiagram()
 	 * @generated
@@ -974,10 +885,10 @@ public interface SmallumlPackage extends EPackage {
 	EReference getDiagram_Assoc();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smalluml.Diagram#getHeritage <em>Heritage</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smalluml.Diagram#getHeritage <em>Heritage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Heritage</em>'.
+	 * @return the meta object for the containment reference list '<em>Heritage</em>'.
 	 * @see smalluml.Diagram#getHeritage()
 	 * @see #getDiagram()
 	 * @generated
@@ -985,10 +896,10 @@ public interface SmallumlPackage extends EPackage {
 	EReference getDiagram_Heritage();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smalluml.Diagram#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smalluml.Diagram#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Class</em>'.
+	 * @return the meta object for the containment reference list '<em>Class</em>'.
 	 * @see smalluml.Diagram#getClass_()
 	 * @see #getDiagram()
 	 * @generated
@@ -1029,7 +940,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass CLASS = eINSTANCE.getClass_();
 
 		/**
-		 * The meta object literal for the '<em><b>Method</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Method</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1037,7 +948,7 @@ public interface SmallumlPackage extends EPackage {
 		EReference CLASS__METHOD = eINSTANCE.getClass_Method();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Attribute</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1055,7 +966,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass METHOD = eINSTANCE.getMethod();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1063,7 +974,7 @@ public interface SmallumlPackage extends EPackage {
 		EReference METHOD__PARAMETERS = eINSTANCE.getMethod_Parameters();
 
 		/**
-		 * The meta object literal for the '<em><b>Return</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Return</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1081,7 +992,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass ASSOCIATION = eINSTANCE.getAssociation();
 
 		/**
-		 * The meta object literal for the '<em><b>Used</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Used</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1089,7 +1000,7 @@ public interface SmallumlPackage extends EPackage {
 		EReference ASSOCIATION__USED = eINSTANCE.getAssociation_Used();
 
 		/**
-		 * The meta object literal for the '<em><b>User</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>User</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1107,7 +1018,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass HERITAGE = eINSTANCE.getHeritage();
 
 		/**
-		 * The meta object literal for the '<em><b>Mother</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Mother</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1115,7 +1026,7 @@ public interface SmallumlPackage extends EPackage {
 		EReference HERITAGE__MOTHER = eINSTANCE.getHeritage_Mother();
 
 		/**
-		 * The meta object literal for the '<em><b>Child</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Child</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1133,7 +1044,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass ROLE = eINSTANCE.getRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1177,14 +1088,6 @@ public interface SmallumlPackage extends EPackage {
 		EClass FLOAT = eINSTANCE.getFloat();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLOAT__VALUE = eINSTANCE.getFloat_Value();
-
-		/**
 		 * The meta object literal for the '{@link smalluml.impl.IntImpl <em>Int</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1193,14 +1096,6 @@ public interface SmallumlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INT = eINSTANCE.getInt();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INT__VALUE = eINSTANCE.getInt_Value();
 
 		/**
 		 * The meta object literal for the '{@link smalluml.impl.BooleanImpl <em>Boolean</em>}' class.
@@ -1213,14 +1108,6 @@ public interface SmallumlPackage extends EPackage {
 		EClass BOOLEAN = eINSTANCE.getBoolean();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOLEAN__VALUE = eINSTANCE.getBoolean_Value();
-
-		/**
 		 * The meta object literal for the '{@link smalluml.impl.StringImpl <em>String</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1229,14 +1116,6 @@ public interface SmallumlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRING = eINSTANCE.getString();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING__VALUE = eINSTANCE.getString_Value();
 
 		/**
 		 * The meta object literal for the '{@link smalluml.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -1267,7 +1146,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass DIAGRAM = eINSTANCE.getDiagram();
 
 		/**
-		 * The meta object literal for the '<em><b>Assoc</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assoc</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1275,7 +1154,7 @@ public interface SmallumlPackage extends EPackage {
 		EReference DIAGRAM__ASSOC = eINSTANCE.getDiagram_Assoc();
 
 		/**
-		 * The meta object literal for the '<em><b>Heritage</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Heritage</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1283,7 +1162,7 @@ public interface SmallumlPackage extends EPackage {
 		EReference DIAGRAM__HERITAGE = eINSTANCE.getDiagram_Heritage();
 
 		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Class</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

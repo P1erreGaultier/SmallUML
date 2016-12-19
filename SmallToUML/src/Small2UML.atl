@@ -5,15 +5,12 @@ module Small2UML;
 create OUT : MM1 from IN : MM;
 
 
-
-
 rule boolean {
 	from
 		f:MM!"smalluml::Boolean"
 	to
 		t:MM1!DataType (
-			name <- 'boolean',
-			ownedAttribute <- f.value
+			name <- 'boolean'
 			)
 }
 
@@ -22,8 +19,7 @@ rule int {
 		f:MM!"smalluml::Int"
 	to
 		t:MM1!DataType (
-			name <- 'int',
-			ownedAttribute <- f.value
+			name <- 'int'
 			)
 }
 
@@ -32,8 +28,7 @@ rule float {
 		f:MM!"smalluml::Float"
 	to
 		t:MM1!DataType (
-			name <- 'float',
-			ownedAttribute <- f.value
+			name <- 'float'
 			)
 }
 
@@ -42,11 +37,9 @@ rule string {
 		f:MM!"smalluml::String"
 	to
 		t:MM1!DataType (
-			name <- 'string',
-			ownedAttribute <- f.value
+			name <- 'string'
 			)
 }
-
 
 rule namedElement{
 	from
@@ -56,7 +49,6 @@ rule namedElement{
 			name <- f.name
 		)
 }
-
 
 rule type{
 	from

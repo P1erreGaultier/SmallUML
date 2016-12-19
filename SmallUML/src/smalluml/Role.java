@@ -20,28 +20,28 @@ package smalluml;
  * @model
  * @generated
  */
-public interface Role extends smalluml.Class {
+public interface Role extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Class</b></em>' reference.
+	 * Returns the value of the '<em><b>Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Class</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Class</em>' reference.
+	 * @return the value of the '<em>Class</em>' containment reference.
 	 * @see #setClass(smalluml.Class)
 	 * @see smalluml.SmallumlPackage#getRole_Class()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	smalluml.Class getClass_();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Role#getClass_ <em>Class</em>}' reference.
+	 * Sets the value of the '{@link smalluml.Role#getClass_ <em>Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Class</em>' reference.
+	 * @param value the new value of the '<em>Class</em>' containment reference.
 	 * @see #getClass_()
 	 * @generated
 	 */

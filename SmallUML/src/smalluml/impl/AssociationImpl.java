@@ -4,6 +4,7 @@ package smalluml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -26,9 +27,9 @@ import smalluml.SmallumlPackage;
  *
  * @generated
  */
-public class AssociationImpl extends ClassImpl implements Association {
+public class AssociationImpl extends NamedElementImpl implements Association {
 	/**
-	 * The cached value of the '{@link #getUsed() <em>Used</em>}' reference.
+	 * The cached value of the '{@link #getUsed() <em>Used</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUsed()
@@ -38,7 +39,7 @@ public class AssociationImpl extends ClassImpl implements Association {
 	protected Role used;
 
 	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
+	 * The cached value of the '{@link #getUser() <em>User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUser()
@@ -72,14 +73,6 @@ public class AssociationImpl extends ClassImpl implements Association {
 	 * @generated
 	 */
 	public Role getUsed() {
-		if (used != null && used.eIsProxy()) {
-			InternalEObject oldUsed = (InternalEObject)used;
-			used = (Role)eResolveProxy(oldUsed);
-			if (used != oldUsed) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.ASSOCIATION__USED, oldUsed, used));
-			}
-		}
 		return used;
 	}
 
@@ -88,8 +81,14 @@ public class AssociationImpl extends ClassImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role basicGetUsed() {
-		return used;
+	public NotificationChain basicSetUsed(Role newUsed, NotificationChain msgs) {
+		Role oldUsed = used;
+		used = newUsed;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.ASSOCIATION__USED, oldUsed, newUsed);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -98,10 +97,17 @@ public class AssociationImpl extends ClassImpl implements Association {
 	 * @generated
 	 */
 	public void setUsed(Role newUsed) {
-		Role oldUsed = used;
-		used = newUsed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ASSOCIATION__USED, oldUsed, used));
+		if (newUsed != used) {
+			NotificationChain msgs = null;
+			if (used != null)
+				msgs = ((InternalEObject)used).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ASSOCIATION__USED, null, msgs);
+			if (newUsed != null)
+				msgs = ((InternalEObject)newUsed).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ASSOCIATION__USED, null, msgs);
+			msgs = basicSetUsed(newUsed, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ASSOCIATION__USED, newUsed, newUsed));
 	}
 
 	/**
@@ -110,14 +116,6 @@ public class AssociationImpl extends ClassImpl implements Association {
 	 * @generated
 	 */
 	public Role getUser() {
-		if (user != null && user.eIsProxy()) {
-			InternalEObject oldUser = (InternalEObject)user;
-			user = (Role)eResolveProxy(oldUser);
-			if (user != oldUser) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.ASSOCIATION__USER, oldUser, user));
-			}
-		}
 		return user;
 	}
 
@@ -126,8 +124,14 @@ public class AssociationImpl extends ClassImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role basicGetUser() {
-		return user;
+	public NotificationChain basicSetUser(Role newUser, NotificationChain msgs) {
+		Role oldUser = user;
+		user = newUser;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.ASSOCIATION__USER, oldUser, newUser);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -136,10 +140,33 @@ public class AssociationImpl extends ClassImpl implements Association {
 	 * @generated
 	 */
 	public void setUser(Role newUser) {
-		Role oldUser = user;
-		user = newUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ASSOCIATION__USER, oldUser, user));
+		if (newUser != user) {
+			NotificationChain msgs = null;
+			if (user != null)
+				msgs = ((InternalEObject)user).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ASSOCIATION__USER, null, msgs);
+			if (newUser != null)
+				msgs = ((InternalEObject)newUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ASSOCIATION__USER, null, msgs);
+			msgs = basicSetUser(newUser, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ASSOCIATION__USER, newUser, newUser));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SmallumlPackage.ASSOCIATION__USED:
+				return basicSetUsed(null, msgs);
+			case SmallumlPackage.ASSOCIATION__USER:
+				return basicSetUser(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -151,11 +178,9 @@ public class AssociationImpl extends ClassImpl implements Association {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmallumlPackage.ASSOCIATION__USED:
-				if (resolve) return getUsed();
-				return basicGetUsed();
+				return getUsed();
 			case SmallumlPackage.ASSOCIATION__USER:
-				if (resolve) return getUser();
-				return basicGetUser();
+				return getUser();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

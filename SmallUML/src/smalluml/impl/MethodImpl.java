@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -13,8 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import smalluml.Method;
 import smalluml.SmallumlPackage;
 import smalluml.Type;
@@ -35,7 +36,7 @@ import smalluml.Type;
  */
 public class MethodImpl extends NamedElementImpl implements Method {
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParameters()
@@ -45,7 +46,7 @@ public class MethodImpl extends NamedElementImpl implements Method {
 	protected EList<Type> parameters;
 
 	/**
-	 * The cached value of the '{@link #getReturn() <em>Return</em>}' reference.
+	 * The cached value of the '{@link #getReturn() <em>Return</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReturn()
@@ -80,7 +81,7 @@ public class MethodImpl extends NamedElementImpl implements Method {
 	 */
 	public EList<Type> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectResolvingEList<Type>(Type.class, this, SmallumlPackage.METHOD__PARAMETERS);
+			parameters = new EObjectContainmentEList<Type>(Type.class, this, SmallumlPackage.METHOD__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -91,14 +92,6 @@ public class MethodImpl extends NamedElementImpl implements Method {
 	 * @generated
 	 */
 	public Type getReturn() {
-		if (return_ != null && return_.eIsProxy()) {
-			InternalEObject oldReturn = (InternalEObject)return_;
-			return_ = (Type)eResolveProxy(oldReturn);
-			if (return_ != oldReturn) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.METHOD__RETURN, oldReturn, return_));
-			}
-		}
 		return return_;
 	}
 
@@ -107,8 +100,14 @@ public class MethodImpl extends NamedElementImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type basicGetReturn() {
-		return return_;
+	public NotificationChain basicSetReturn(Type newReturn, NotificationChain msgs) {
+		Type oldReturn = return_;
+		return_ = newReturn;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.METHOD__RETURN, oldReturn, newReturn);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -117,10 +116,33 @@ public class MethodImpl extends NamedElementImpl implements Method {
 	 * @generated
 	 */
 	public void setReturn(Type newReturn) {
-		Type oldReturn = return_;
-		return_ = newReturn;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.METHOD__RETURN, oldReturn, return_));
+		if (newReturn != return_) {
+			NotificationChain msgs = null;
+			if (return_ != null)
+				msgs = ((InternalEObject)return_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.METHOD__RETURN, null, msgs);
+			if (newReturn != null)
+				msgs = ((InternalEObject)newReturn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.METHOD__RETURN, null, msgs);
+			msgs = basicSetReturn(newReturn, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.METHOD__RETURN, newReturn, newReturn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SmallumlPackage.METHOD__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.METHOD__RETURN:
+				return basicSetReturn(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -134,8 +156,7 @@ public class MethodImpl extends NamedElementImpl implements Method {
 			case SmallumlPackage.METHOD__PARAMETERS:
 				return getParameters();
 			case SmallumlPackage.METHOD__RETURN:
-				if (resolve) return getReturn();
-				return basicGetReturn();
+				return getReturn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

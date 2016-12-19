@@ -91,7 +91,6 @@ public class SmallumlSwitch<T> extends Switch<T> {
 			case SmallumlPackage.ASSOCIATION: {
 				Association association = (Association)theEObject;
 				T result = caseAssociation(association);
-				if (result == null) result = caseClass(association);
 				if (result == null) result = caseNamedElement(association);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -99,7 +98,6 @@ public class SmallumlSwitch<T> extends Switch<T> {
 			case SmallumlPackage.HERITAGE: {
 				Heritage heritage = (Heritage)theEObject;
 				T result = caseHeritage(heritage);
-				if (result == null) result = caseClass(heritage);
 				if (result == null) result = caseNamedElement(heritage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -107,7 +105,6 @@ public class SmallumlSwitch<T> extends Switch<T> {
 			case SmallumlPackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
-				if (result == null) result = caseClass(role);
 				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -115,6 +112,7 @@ public class SmallumlSwitch<T> extends Switch<T> {
 			case SmallumlPackage.TYPE: {
 				Type type = (Type)theEObject;
 				T result = caseType(type);
+				if (result == null) result = caseNamedElement(type);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,6 +120,7 @@ public class SmallumlSwitch<T> extends Switch<T> {
 				smalluml.Float float_ = (smalluml.Float)theEObject;
 				T result = caseFloat(float_);
 				if (result == null) result = caseType(float_);
+				if (result == null) result = caseNamedElement(float_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,6 +128,7 @@ public class SmallumlSwitch<T> extends Switch<T> {
 				Int int_ = (Int)theEObject;
 				T result = caseInt(int_);
 				if (result == null) result = caseType(int_);
+				if (result == null) result = caseNamedElement(int_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -136,6 +136,7 @@ public class SmallumlSwitch<T> extends Switch<T> {
 				smalluml.Boolean boolean_ = (smalluml.Boolean)theEObject;
 				T result = caseBoolean(boolean_);
 				if (result == null) result = caseType(boolean_);
+				if (result == null) result = caseNamedElement(boolean_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,6 +144,7 @@ public class SmallumlSwitch<T> extends Switch<T> {
 				smalluml.String string = (smalluml.String)theEObject;
 				T result = caseString(string);
 				if (result == null) result = caseType(string);
+				if (result == null) result = caseNamedElement(string);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
